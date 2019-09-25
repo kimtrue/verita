@@ -1,0 +1,40 @@
+*{
+     list-style: none;
+     text-align: center;
+     padding: 0;
+     text-decoration: none;
+     color: yellow;
+     font-size: 30px;
+     font-weight: bold;
+
+
+      
+}
+
+
+
+ li{
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    line-height: 150%;
+    background: burlywood;
+    margin: 10px;
+    display: inline-block;
+    font: 0 0 bold; 
+
+}
+
+li:hover{
+    background: brown;
+   
+}
+
+ul li ul li{
+    display: none;
+}
+
+ul li ul li:hover{
+    display: block
+}
+

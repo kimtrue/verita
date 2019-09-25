@@ -1,0 +1,29 @@
+
+.container{
+    width: 1000px;
+    height: 300px;
+    background: rgb(241, 241, 241);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+div, span{
+    width: 100px;
+    height: 100px;
+    display: in;
+
+}
+
+span{
+    display: block;
+}
+
+h2{
+    text-align: center;
+    font-size: 35px;
+    font-style: bold;
+    border-bottom: 5px solid orange;
+    padding: 20px;
+    width: 600px;
+    margin-left: 200px;
+}

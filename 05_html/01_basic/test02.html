@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>meta 태그 이해</title>
+        <!--
+            meta tag 
+            : 문서 자체를 설명하는 태그
+              웹 페이지에 보이지 않는 정보를 제공
+              크롤링 정책 등 수많은 정보 제공
+        -->
+        <meta charset="utf-8">
+        <!--
+            로봇(robots)
+            noindex, index, nofollow, follow 설정
+            인덱싱 여부 : 검색엔진이 내 페이지를 관리하겠다
+            follow  : 페이지링크를 따라갈 수 있는지 없는지 처리 따라갈 수 없게는 nofollow
+        -->
+        <meta name="robots" content="index,follow">
+        <!--
+            뷰포트(viewport)
+             웹페이지가 사용자에게 보여지는 영역
+             scale : 비율
+        -->
+        <meta name="viewport" content="width=device-width;initial-scal=1">
+        <!--
+            http-equiv="refresh"
+            content="2;" 2초뒤에 실행해라
+            content="2; http://www.naver.com 2초뒤에 자동으로 네이버로 이동
+        -->
+        <meta http-equiv="refresh" content="2; http://www.naver.com ">
+    </head>
+     <!--화면에 보이는 문서의 내용-->
+    <body>
+        <p>메타 태그 이해하기</p>
+        <h2>2초뒤 네이버로 자동 이동됩니다</h2>
+        <a href="http://www.naver.com">네이버</a>
+    </body>
+</html>

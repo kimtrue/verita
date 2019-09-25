@@ -1,0 +1,78 @@
+* {
+	margin : 0;
+	padding: 0;
+	list-style:none;
+	/* color:#a0a3a2; */
+	/* font-family:times, '돋음'; */
+	/* font-size:19px; */
+	line-height:1.5;
+	box-sizing : border-box;
+	text-decoration : none;
+}
+body { 
+	/* padding-top: 120px; */
+	font-family: "Noto Sans KR", sans-serif; 
+    min-height:100%;
+    min-width: 100%;
+}
+
+content{
+    position: relative;
+    width: 100%;
+    border: 1px solid #f99;
+}
+
+content > div{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #f99;
+}
+
+.paper {
+	width: 1000px;
+	height: 500px;
+	margin: 10px;
+	border: 1px solid coral;
+    background: rgb(212, 213, 240);
+	display: grid;
+	margin: 10px;
+	grid-template-rows: 1fr 250px 1fr;
+}
+
+
+
+
+
+div.seatbox {
+	background: whitesmoke;
+	margin: 10px;
+	text-align: center;
+}
+
+.seatline {
+	float:left;
+	margin: 10px;
+	margin-top: 20px;
+}
+.seatbox::after {
+	content: '';
+	display: block;
+	clear: both;
+
+}
+
+
+
+input[type="checkbox"] {
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	
+}
+label {
+	line-height: 30px;
+}
+
+.blank {
+	margin: 44.5px;
+}

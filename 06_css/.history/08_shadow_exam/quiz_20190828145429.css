@@ -1,0 +1,15 @@
+
+
+.card{
+    mar
+    border: 1px solid black;
+    
+    width: 80%;
+}
+
+.card_thumb { 
+    border: 1px solid black;
+}
+.card_body{
+    display: inline;
+}

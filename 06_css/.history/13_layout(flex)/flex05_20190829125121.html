@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 
+	flexContainer에 설정하는 아이템의 위치 지정
+
+
+	cross axis 정렬과 건격 제어
+	align-items:  stretch | flex-start | flex-end | center | baseline
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>교차축 정렬</title>
+<link rel="stylesheet" href="style.css">
+<style>
+	.flex-container{
+		display: flex;
+		width: 600px;
+		height: 600px;
+
+		align-items: flex-start;/*기본값*/
+		align-items: flex-end; /*교차하는 곳에 끝 방향*/
+		align-items: center; /*교차하는 곳에 정중앙*/
+		align-items: stre; /*교차하는 곳에 정중앙*/
+		
+	}
+
+</style>	
+</head>
+<body>
+	<div class="container">
+		<h2>align-items: stretch | flex-start | flex-end | center | baseline</h2>
+		<div class="flex-container">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</div>
+</body>
+</html>

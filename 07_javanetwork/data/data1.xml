@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+    <!-- xml의 규칙 :루트는 반드시 하나만 존재해야한다. 태그는 열고 닫는게 꼭 있어야한다-->
+    <family>다스베이더</family>
+    <family>루크스카이워커</family>
+    <family>오비완</family>
+
+</result>

@@ -1,0 +1,12 @@
+.container {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px; 
+    border: 1px solid black;
+}
+
+
+@media (min-width: 911px){
+    sec
+}

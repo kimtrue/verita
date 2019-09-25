@@ -1,0 +1,24 @@
+.container{
+    border: 1px solid black;
+    background: #026aa7;
+    height: 500px;
+    
+}
+h2{
+    color: #ffffff;
+    margin-bottom: 5%;
+}
+
+li{
+    text-align: center;
+    display: inline-block;
+    list-style: none;
+    
+    width: 80px;
+    border: 1px solid black;
+    
+    padding: 20px;
+    
+
+  
+}

@@ -1,0 +1,82 @@
+
+header, footer{
+    border: 1px solid black;
+    margin: 30px;
+    display: flex;
+  
+}
+
+
+
+.main-img{
+    border: 1px solid black;
+    margin: 30px;
+   
+}
+
+.sidebar{
+    border: 1px solid black;
+    width: 50px;
+    margin: 30px;
+    display: flex;
+   
+
+}
+
+.thum>div{
+    border: 1px solid black;
+    width: 50px;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

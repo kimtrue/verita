@@ -1,0 +1,28 @@
+.container {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px; 
+    border: 1px solid black;
+}
+
+header, footer, .big, .thum
+
+
+
+@media (min-width: 911px){
+  .container section {
+    background: thistle;
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: 1fr 100px;
+    grid-gap: 10px;
+    grid-template-areas: ". one"
+                         ". one"
+
+}
+ section>div:nth-child(3){
+     grid-area: one;
+ }
+}

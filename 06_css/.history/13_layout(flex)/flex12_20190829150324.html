@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+	align-selef는 아이템 개별로 설정 할 수 있다
+	align-content: auto | stretch | flex-start | flex-end | center | space-around | space-between
+	align-item 보다 우선순위가 높다
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
+<style>
+		 .flex-container{
+
+		 display: flex;
+		 flex-wrap: wrap;
+		 /*여러줄일때 사용한다*/
+		 align-content: space-around; 
+		 align-content: space-between; 머리가 왜케 딱딱하냐 
+	 }
+	
+
+</style>	
+</head>
+<body>
+	<div class="container">
+		<h2>align-content:  auto | stretch | flex-start | flex-end | center | space-around | space-between</h2>
+		<div class="flex-container">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+function too(){
+    console.log()
+}

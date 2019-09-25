@@ -1,0 +1,44 @@
+ul{
+    list-style: none;
+    padding: 0px;
+    font-size: 50px;
+    
+}
+
+
+
+#stickies {
+    width: 90%;
+    height: 800px;
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 10px;
+   
+    align-items: space-evenly;
+    justify-items: space-evenly;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: repeat(auto-fit, 200px);
+}
+
+li{
+    background: blueviolet;
+    display: grid;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    
+}
+
+#stickies>li:nth-child(3n+1) {
+    background: coral;
+    transform: rotateZ(30deg);
+    
+}
+#stickies>li:nth-child(3n+2) {
+    background: violet;
+}
+#stickies>li:nth-child(3n) {
+    background: blanchedalmond;
+}
+
+

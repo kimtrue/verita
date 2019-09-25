@@ -1,0 +1,38 @@
+.container {
+
+    width: 800px;
+    height: 800px;
+    display: grid;
+ 
+    grid-gap: 10px;
+    grid-template-rows: [row1-start]100px [row1-end row2-start]1fr[row2-start] 100px;
+    
+}
+
+header,  footer, .big, .sidebar, .thum-image{
+    background: blanchedalmond;
+
+}
+
+section {
+   display: grid;
+   grid-template-rows : [row1-start]1fr [row1-end] 100px [row2-end];
+   grid-template-columns : [col1-start]1fr[col1-end col2-start] 100px [col2-end];
+   grid-gap: 10px;
+
+}
+
+.sidebar {
+   grid-area: row1-start/ 2/ row2-end/ 3;
+}
+
+.thum {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);  
+   grid-gap: 10px;
+   
+}
+
+
+
+

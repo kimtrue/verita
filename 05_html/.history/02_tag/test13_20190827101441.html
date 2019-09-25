@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        링크 이해하기 !
+        경로 찾기 ..
+        http://127.0.0.1:5500/02_tag/test12.html
+
+        href 주소 찾기
+        <a href="....">주소</a>
+        -절대경로 http://로 시작한다
+                 images> god 부르기
+                   http://127.0.0.1:5500/images/god.jpg
+
+        -상대경로 : /로 시작하는 경우
+                    = 절대경로 방식에서 포트번호까지 제외한 나머지
+                 : /로 시작하지 않는 경우
+
+    -->
+    <!--절대경로 : 남이 만든 사이트로 이동할 때-->
+    <div>
+        <a href="http://127.0.0.1:5500/images/god.jpg">god.jpg 이동하기</a>
+    </div>
+
+    <!--상대경로 /로 시작하는 내가 찾고자 하는 것이 나한테 있을때만 사용 가능-->
+    <div>
+        <a href="/images/god.jpg">god.jpg 이동하기</a>
+    </div>
+    
+    <!--상대경로 /로 시작하지않는 방식 -->
+    <div>
+        <a href="/images/god.jpg">god.jpg 이동하기</a>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+    <style>
+        .wrapper{
+            display: grid;
+        /* 그리드에 이름줘서 접근하기*/
+            grid-template-columns: [col1-start] 1fr[col1-end] 1fr[col2-end] 1fr;
+            grid-gap: 10px;              /*명시적으로 이름을 준다*/
+            grid-template-rows: repeat(5,[row-start] 80px [row-end]);
+        }
+
+
+         
+
+        .wrapper > div:nth-child(5n+1){
+            /*위치지정 별도 템플레이트*/
+            grid-row-start: row-start 1;
+            grid-row-end: row-;
+            /* grid-column-start: 1; */
+            /* grid-column-end: 2; */
+            /*
+            grid-column-start: col1-start;
+            grid-column-end: col1-end;
+            */
+            grid-column: col1; /*col1-start와 col1-end 라는 의미*/
+            /*1과 2가 중첩되어있어서 1이 위로 올라오게한다*/
+            z-index: 10;
+        }
+
+     
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

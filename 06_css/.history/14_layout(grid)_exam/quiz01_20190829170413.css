@@ -1,0 +1,32 @@
+div {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+     grid-template-rows: repeat(8, 80px);
+     border: 1px solid black;
+}
+
+header, footer,
+.sidebar, .thum-image {
+    
+}
+
+
+
+header {
+    grid-area: 1 / span 4;
+}
+
+div.big {
+    grid-area: 2/ span 4;
+}
+
+div.thum {
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+
+
+footer {
+    grid-area: 8/ span 4;
+}

@@ -1,0 +1,43 @@
+div {
+    position: relative;
+    width: 200px; height: 200px;
+    background: red;
+
+    animation-name: myexam;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    
+
+
+
+
+
+}
+
+
+@keyframes myexam{
+0%{ top: 0px;
+    left:0px;
+}
+25%{
+    
+    top: 0px;
+    left: 500px;
+}
+50%{
+    border-radius: 100%;
+    top: 500px;
+    left: 0px;
+}
+75%{
+    border-radius: 0%;
+    top: 500px;
+    left: 500px;
+}
+100%{
+   
+    top: 0px;
+    left: 0px;}
+
+
+}

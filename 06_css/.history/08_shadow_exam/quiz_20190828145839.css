@@ -1,0 +1,19 @@
+
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 1px solid black;
+    
+    width: 80%;
+}
+
+.card__thumb__img { 
+    
+    border-radius: 80%;
+    display: inline;
+}
+.card_body{
+    display: inline;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        a(anchor) 엘리먼트
+        : 링크를 설정하는 태그
+        : 주로 텍스트나 이미지에 설정
+         href 속성
+         : 클릭시 호출할 페이지 주소
+           "" or '' 사용
+           
+    -->
+    <h2><a href="http://www.naver.com">네이버</a></h2>
+    <h2><a href="./test01.html">test01.html</a></h2>
+    <!--얘도 가능-->
+    <h2><a href="test01.html">test01.html</a></h2>
+
+    <h2><a href="../images/test1.jpg">평화로운새</a></h2>
+    
+    <!--네이버 이미지를 불러와서 이미지 선택시 페이지 이동한다-->
+    <h2><a href="http://www.naver.com"><img src="../images/naver.jpg" alt="네이버"></a></h2>
+   
+    <!--
+        target : 
+        페이지를 띄울 때 위치 지정하기
+        _self 현재창에 띄우기
+        _blank 새창 새탭
+         창의 이름 지정 : 이름이 존재하면 존재하는 창에 페이지 출력
+                         이름이 없다면 새 창에 출력된다
+    -->
+    <h2><a href="./test01.html" target="_self">
+        test01.html</a></h2>
+    <h2><a href="./test01.html" target="_blank">
+        test01.html</a></h2>
+    <h2><a href="./test01.html" target="abc">
+        test01.html(abc)</a></h2>
+</body>
+</html>

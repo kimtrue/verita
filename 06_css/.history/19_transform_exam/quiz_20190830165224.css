@@ -1,0 +1,10 @@
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+#stickies {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 10px;
+}

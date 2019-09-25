@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="doStrart()">시작</button>
+        <button  onclick="doStop()">중지</button>
+    </div>
+    <div id="timediv">시작버튼을 클릭하세요</div>
+    <script>
+     let id = null;
+     function doStrart(){
+            let d = new Date(); //현재의 시간
+            let time = d.toLocaleTimeString(); // 시간정보 ?
+            console.log(time); 
+
+             //1초마다 찍어주고 싶다
+            id = setTimeout(doStrart(), 1000);
+        /화면에 경고창 alert("시작버튼 클릭");
+            }
+            function doStop(){
+            clearTimeout(id);
+            //화면에 경고창
+
+     }
+    </script>
+</body>
+</html>

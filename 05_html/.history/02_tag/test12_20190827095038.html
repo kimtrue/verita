@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--form action이 없다면 submit하면 자기 자신을 다시 부른다-->
+    <form action="">
+    <!--
+        form : 입력값을 서버에 전송할 때 쓰는 것
+        fieldset : 입력항목을 그룹으로 묶어서 표현
+    -->
+     
+    <fieldset>
+            <legend>입력항목1</legend>
+            <p>
+                color : 
+                <!--기본 지정 색상을 변경하고 싶으면 value 값을 줘라-->
+                <input type="color" name="co" value="#dadacc">         
+            </p>
+            <p>
+                email : 
+                <!--
+                    required 
+                    필수항목 체크하기. not null
+                -->
+                <input type="email" name="email" required>         
+            </p>
+            <p>
+                url : 
+                <!--
+                    url
+                    입려값이 http:// 이 포함되어야한다
+                    email
+                    @ 가 포함되어있는지 체크해준다
+                
+                -->
+                <input type="url" name="url" >         
+            </p>
+            <p>
+                    calendar : 
+                    <!--
+                        date 
+                        필수항목 체크하기. not null
+                    -->
+                    <input type="date" name="email" required>         
+                </p>
+
+
+            
+
+            <p>
+                <button>등록</button>
+            </p>
+    </fieldset>
+
+   </form>
+</body>
+</html>

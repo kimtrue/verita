@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .board {
+            display: grid;
+            width: 800px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid slateblue;
+            grid-template-rows: 100px 1fr 1fr;
+       }
+
+        div h3{
+            margin-left: 20px;
+        }
+        .boardup {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+        .boardup>h3 {
+            border-right: 1px dotted black;
+        }
+        #bigtitle {
+            text-align: center;
+        }
+        .button {
+
+            margin: auto;
+        }
+        .bbb {
+            display: grid;
+            grid-template-col: 1fr 1fr;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+     <h2 id="bigtitle">자유게시판</h2>
+     <div class="board">
+        <div class="boardup">
+            <h3>번호: </h3>
+         
+            <h3>제목: </h3>
+          
+        </div>
+        <div>
+            <hr>
+            <h3>작성일: </h3>
+            <hr>
+        </div>
+        <div>
+            
+            <h3>내용: </h3>
+        </div>
+     </div>
+     <div class="bott">
+         <div class="bbb">
+            <button type="button" style="width: 50px; height: 30px;" onclick="location.href='update.do'">수정</input>
+           
+            <button type="button" style="width: 50px; height: 30px;" onclick="location.href='delete.do'">삭제</input>
+          </div>
+     </div>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+body * {
+    margin: 20px;
+    font: 30px sans-serif ;
+}
+.one{
+    font-family: monospace;
+}
+.two{
+    font-family: 'Sunflower', sans-serif;
+}
+.three{
+    font-style: italic;
+    font-weight: bold;
+    
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h2>테스트08 서블릿 호출하기</h2>
+      <!-- 절대경로 -->
+     <div>
+        <a href="http://localhost:8000/08_servletjsp/servlet/basic/test08.do">test08-1</a>
+        </div>
+     <!-- 상대경로 -->
+      <div>
+    	  <a href="/08_servletjsp/servlet/basic/test08.do">test08-2</a>
+      </div>
+     <!--
+        /로 시작하지않는 상대경로. 현재의 호출된 페이지 기준으로 경로를 따진다 
+        http://localhost:8000/08_servletjsp/servlet/basic/test08.html
+        http://localhost:8000/08_servletjsp/servlet/basic/test08.do
+        
+        servlet/basic/test08.do을 주면 
+        http://localhost:8000/08_servletjsp/servlet/basic/servlet/basic/test08.do 라는 의미
+     -->
+     <div>
+     	<a href="test08.do">test08-3</a>
+     </div>
+     <form method="get" action="test08.do">
+          <input type="text" name="msg"/>
+          <button>GET호출</button>
+     </form>
+     <form method="post" action="test08.do">
+          <input type="text" name="msg"/>
+          <button>POST호출</button>
+     </form>
+
+</body>
+</html>

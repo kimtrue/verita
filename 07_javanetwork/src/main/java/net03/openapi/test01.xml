@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Naver Open API - movie ::'반지의제왕'</title>
+		<link>https://search.naver.com</link>
+		<description>Naver Search Result</description>
+		<lastBuildDate>Mon, 02 Sep 2019 16:43:46 +0900</lastBuildDate>
+		<total>5</total>
+		<start>1</start>
+		<display>3</display>
+		<item>
+			<title>&lt;b&gt;반지의 제왕&lt;/b&gt;: 왕의 귀환</title>
+			<link>https://movie.naver.com/movie/bi/mi/basic.nhn?code=31796</link>
+			<image>https://ssl.pstatic.net/imgmovie/mdi/mit110/0317/31796_P74_101438.jpg</image>
+			<subtitle>The Lord Of The Rings: The Return Of The King</subtitle>
+			<pubDate>2003</pubDate>
+			<director>피터 잭슨|</director>
+			<actor>일라이저 우드|숀 애스틴|앤디 서키스|이안 맥켈런|리브 타일러|비고 모텐슨|올랜도 블룸|존 라이스 데이비스|빌리
+				보이드|도미닉 모나한|버나드 힐|미란다 오토|</actor>
+			<userRating>9.36</userRating>
+		</item>
+		<item>
+			<title>비욘드 더 무비 - &lt;b&gt;반지의 제왕&lt;/b&gt; 3</title>
+			<link>https://movie.naver.com/movie/bi/mi/basic.nhn?code=63952</link>
+			<image>https://ssl.pstatic.net/imgmovie/mdi/mit110/0639/63952_P01_141159.jpg</image>
+			<subtitle>National Geographic: Beyond The Movie - The Lord Of The
+				Rings: Return Of The King</subtitle>
+			<pubDate>2003</pubDate>
+			<director></director>
+			<actor>숀 애스틴|올랜도 블룸|</actor>
+			<userRating>9.00</userRating>
+		</item>
+		<item>
+			<title>&lt;b&gt;반지의 제왕&lt;/b&gt;: 두 개의 탑</title>
+			<link>https://movie.naver.com/movie/bi/mi/basic.nhn?code=31795</link>
+			<image>https://ssl.pstatic.net/imgmovie/mdi/mit110/0317/31795_P38_101318.jpg</image>
+			<subtitle>The Lord Of The Rings: The Two Towers</subtitle>
+			<pubDate>2002</pubDate>
+			<director>피터 잭슨|</director>
+			<actor>일라이저 우드|이안 맥켈런|비고 모텐슨|</actor>
+			<userRating>9.32</userRating>
+		</item>
+	</channel>
+</rss>

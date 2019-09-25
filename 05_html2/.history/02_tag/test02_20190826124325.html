@@ -1,0 +1,41 @@
+<!--
+    test1.jpg를 보기위해..
+    다른 폴더의 파일에서 보려면,
+     패키지 05_html -> images folder -> test1 경로 접근을 해야한다
+     ./test01.html    . 은 나 자신
+     ../images/test1.jpg
+
+     02_tag test02.html에서 
+     01_basic test02.html을 접근하고 싶을 때
+     ../01_basic/test02.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        img element
+         : 이미지를 화면에 보여준다
+        jpg, jpeg : 투명배경 지원하지 않고 파일 크기 작다
+        gif : 애니메이션 지원
+        png : 적은 수의 색상을 가지는 이미지에 적합
+    -->
+    <h2>이미지(image)</h2>
+
+    <!--src에 불러올 이미지의 경로를 넣어준다-->
+    <img src="../images/test1.jpg">
+    <!--alt 경로가 잘못되었을 때 대체할 텍스트-->
+    <img src="../images/test.jpg" alt="평화로운 새">
+    <!--이미지의 사이즈-->
+    <img src="../images/test1.jpg" alt="평화로운 새" width="200" height="100">
+
+    
+    
+</body>
+</html>

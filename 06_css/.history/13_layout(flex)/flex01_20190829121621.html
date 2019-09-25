@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	flexContainer에 설정가능
+	flex-item들의 방향을 지정
+	
+	container에 적용되는 속성
+	flex-direction:  row | row-reverse | column | column-reverse
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
+<style>
+	.flex-container{
+		display: flex; /*부모의 크기만큼 줄어들면서 정렬됐다*/
+		 /*플렉스의 아이템들이 row방향으로 붙었다*/
+		 
+		  flex-direction: row; /*값이 없을땐 row방향이 기본이다*/
+		  flex-direction: row-reverse; /*float right와 비슷*/
+		  flex-direction: column; /*컬럼방향으로 떨어진다*/
+	}
+
+</style>	
+</head>
+<body>
+	<div class="container">	
+		<h2>flex-direction: row | row-reverse | column | column-reverse</h2>
+		<div class="flex-container">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</div>
+</body>
+</html>

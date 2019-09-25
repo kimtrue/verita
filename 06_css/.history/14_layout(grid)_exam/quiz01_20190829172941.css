@@ -1,0 +1,23 @@
+ .container {
+
+     width: 500px;
+     height: 800px;
+     display: grid;
+     border: 1px solid black;
+     grid-gap: 20px;
+     grid-template-rows: 100px 1fr 100px;
+     
+}
+
+header, section, footer{
+    border: 1px solid black;
+
+}
+
+section {
+    display: grid;
+    grid-templa
+}
+
+
+

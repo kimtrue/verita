@@ -1,0 +1,11 @@
+div {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+     
+     grid-template-rows: repeat(8, 80px);
+     border: 1px solid black;
+}
+
+header, footer, .sidebar, .thum-image {
+    grid-gap: 30;
+}

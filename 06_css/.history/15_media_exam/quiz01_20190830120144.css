@@ -1,0 +1,5 @@
+.continer {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px; 
+    border: 1px solid black;
+}

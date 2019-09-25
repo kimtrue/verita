@@ -1,0 +1,21 @@
+.container{
+    border: 1px solid black;
+    background: #026aa7;
+    height: 500px;
+    
+}
+h2{
+    color: #ffffff;
+}
+
+li{
+    display: inline;
+    list-style: none;
+    widt
+    border: 1px solid black;
+    
+    
+    padding: 20px;
+
+  
+}

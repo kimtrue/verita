@@ -1,0 +1,28 @@
+
+header, footer{
+    border: 1px solid black;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-img{
+    border: 1px solid black;
+    margin: 30px;
+    flex-direction: row;
+}
+
+.thum div{
+    border: 1px solid black;
+    width: 50px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+}
+
+.sidebar{
+    
+}

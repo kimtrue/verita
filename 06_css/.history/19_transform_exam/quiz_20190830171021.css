@@ -1,0 +1,30 @@
+ul{
+    list-style: none;
+    padding: 0px;
+    font-size: 60px;
+    
+}
+
+
+
+#stickies {
+    width: 1000px;
+    height: 800px;
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    grid-te
+    
+  
+}
+
+li{
+    background: blueviolet;
+    display: grid;
+    width: 150px;
+    height: 200px;
+    overflow: hidden
+}

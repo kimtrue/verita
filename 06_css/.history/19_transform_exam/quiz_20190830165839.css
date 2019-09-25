@@ -1,0 +1,16 @@
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+
+
+#stickies {
+    width: 800px;
+    height: 800px;
+    border: 1px solid black;
+    background: s
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: repeat(13, 1fr);
+}

@@ -1,0 +1,17 @@
+
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 1px solid black;
+    height: 3
+}
+
+.card__thumb__img { 
+    border-radius: 100%;
+    
+}
+.card_body{
+    display: inline;
+}

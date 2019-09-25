@@ -1,0 +1,17 @@
+body {
+    background:rgb(255, 255, 185);
+
+}
+
+.container > div:nth-child(1) {
+    background: #af52aa;
+}
+.container > div:nth-child(2) {
+    background: #a5274a;
+}
+
+
+@media(max){
+
+}
+

@@ -1,0 +1,29 @@
+*{
+     list-style: none;
+     text-align: center;
+     padding: 0;
+     text-decoration: none;
+     
+      
+}
+
+.mainLnb{
+    
+}
+
+ li{
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    line-height: 300%;
+    back
+    color: yellow;
+    margin: 10px;
+    float: left;
+    font: 0 0 bold; 
+
+}
+
+ul li ul li{
+    display: none;
+}

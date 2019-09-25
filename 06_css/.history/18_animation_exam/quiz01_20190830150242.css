@@ -1,0 +1,42 @@
+div {
+    position: relative;
+    width: 200px; height: 200px;
+    background: red;
+
+    animation-name: myexam;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
+
+}
+
+
+@keyframes myexam{
+0%{ top: 0px;
+    left:0px;
+}
+25%{
+    border-radius: 100%;
+    top: 0px;
+    left: 500px;
+    background: orange;
+}
+50%{
+    border-radius: 0%;
+    top: 500px;
+    left: 0px;
+    background: greenyellow;
+}
+75%{
+    border-radius: 100%;
+    top: 500px;
+    left: 500px;
+    background: salmon;
+}
+100%{
+   
+    top: 0px;
+    left: 0px;}
+
+
+}

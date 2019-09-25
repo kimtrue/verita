@@ -1,0 +1,26 @@
+*{
+     list-style: none;
+     text-align: center;
+     padding: 0;
+      
+}
+
+.mainLnb{
+    
+}
+
+ li{
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    line-height: 300%;
+    text-decoration-line: none;
+    margin: 10px;
+    float: left;
+    font: 0 0 bold; 
+
+}
+
+ul li ul li{
+    display: none;
+}

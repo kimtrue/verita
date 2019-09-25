@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1000px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.table{
+  width: 80%;
+  margin-left: 10%;
+  border-collapse: collapse;
+  
+}
+ .table th{
+   border-top: 1px solid #bcbcbc;
+   text-align: left;
+   padding: 2px;
+ }
+
+ .table td{
+  border-top: 1px solid #bcbcbc;
+  text-align: center;
+
+}

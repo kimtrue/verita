@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <title>BITAIR</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="bluecolor">
+            <ul class="login">	            
+                <li><a href="#">로그아웃</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </div>
+        <div class="gnb">
+            <!-- 로고영역 -->
+            <!-- 임의로 넣어논 로고 -->
+            <div id="logo">
+                <a href="index.html">
+                    <img src="img/logo(white).png" alt="임의로고">
+                </a>
+            </div>
+            
+            <!-- 메뉴 영역 -->
+            <ul class="nav">	            
+                <li><a href="#">예약관리</a></li>
+                <li><a href="#">서비스</a></li>
+                <li><a href="#">이벤트/정보</a></li>
+                <li><a href="#">마이페이지</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+            </div>
+        </div>
+    </header>
+        
+    <!-- 중단 메인 박스 -->
+    <content>
+        <!-- content에 소스작성 -->
+        <div class="busList"> 
+            <div class="gofrom">
+                <div class="singleTrans">                      
+                    <div>
+                      <a id="start">고양종합</a>
+                    </div>
+                    <div>
+                      <a id="arrow">→</a>
+                    </div>
+                    <div>
+                      <a id="arrival">강촌</a>
+                    </div>
+                     
+                </div>
+           </div> 
+        <div class="allpaper">   
+        <div class="startday">
+            <a> yyyy-MM-dd </a>
+         </div>
+         <table>
+             <thead>
+                 <tr>
+                     <th>출발시간</th>
+                     <th>출발지</th>
+                     <th>도착지</th>
+                     <th>버스회사</th>
+                     <th>버스등급</th>
+                     <th>총 좌석</th>
+                     <th>예매가능</th>
+                     <th>정보</th>
+                     <th>좌석선택</th>
+                     </tr>
+            </thead>
+                 <tr>
+                     <td>7 : 00</td>
+                     <td>고양종합</td>
+                     <td>강촌</td>
+                     <td>강원고속</td>
+                     <td>프리미엄</td>
+                     <td>36</td>
+                     <td><strong>36</strong></td>
+                     <td class="detail"><a href=""><img src="/img/상세보기.png" alt="상세보기입니다"></a></td>
+                     <td class="seatchoice"><a href=""><img src="/img/좌석선택.png" alt="좌석예약입니다"></a></td>
+                 </tr>
+                 
+                 
+                 <!--좌석 선택-->   
+                 <tr id="busseatlayer">
+                     <td colspan="9">
+            <div class="paper">
+            <!--윗단 주의사항-->
+               <div class="paperdiv">
+                   <div>
+                      <h2> 좌석배치도</h2>
+                   </div>
+                   <div class="noty">
+                  <ul>
+                      <li>좌석 1,2번은 교통약자 (장애인, 임산부, 노약자) 좌석입니다. </li>
+                      <li>교통약자를 위해 배려해주세요.</li>
+                      <li>선택하신 좌석은 실제 좌석과 상이 할 수 있습니다.</li>
+                   </ul>
+                </div>
+
+                  <div class="hidden">
+                  <INPUT TYPE="button" VALUE="△"  OnClick="href=div.paper=hidden">  
+                  </div>
+                </div>
+           <!--중간 자리선택& 예매확인버튼-->     
+           <div class="seatbox"> 
+               <div class="seatline">
+                   <ul>
+                       <li>
+                           <h3>출입문</h3>
+                       </li>
+                       <li class="blank"></li>
+                       <li>앞</li>
+                       <li>　</li>
+                       <li><h4>운</h4></li>
+                       <li><h4>전</h4></li>
+                       <li><h4>자</h4></li>
+                  </ul>
+               </div>                    
+               <div class="seatline">
+                  <ul>
+                    <li>
+                        <div></div>
+                        <input type="checkbox" id="01">
+                        <label for="01">1</label>
+                    </li>
+                    <li class="blank"></li>
+                    
+                    <li>
+                        <div></div>
+                        <input type="checkbox" id="03">
+                        <label for="03">2</label>
+                    </li>
+                    <li>
+                        <div></div>
+                        <input type="checkbox" id="04">
+                        <label for="04">3</label>
+                    </li>
+                  </ui>
+               </div>  
+               <div class="seatline" style="width:70px">
+                  <ul>
+                   <li>
+                      <div></div>
+                      <input type="checkbox" id="05">
+                      <label for="05">4</label>
+                    </li>
+                    <li class="blank"></li>
+                    <li>
+                        <div></div>
+                        <input type="checkbox" id="07">
+                        <label for="07">5</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="08">
+                        <label for="08">6</label>
+                    </li>
+                  </ui>
+               </div>                 
+               <div class="seatline" style="width:70px">
+                    <ul>
+                       <li>
+                          <div></div>
+                          <input type="checkbox" id="09">
+                          <label for="09">7</label>
+                        </li>
+                        <li class="blank"></li>
+                        <li>
+                            <div></div>
+                            <input type="checkbox" id="11">
+                            <label for="11">8</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="12">
+                            <label for="12">9</label>
+                        </li>
+                    </ui>
+               </div>
+               <div class="seatline" style="width:70px">
+                   <ul>
+                       <li>
+                         <div></div>
+                         <input type="checkbox" id="13">
+                         <label for="13">10</label>
+                       </li>
+                       <li class="blank"></li>
+                       <li>
+                           <div></div>
+                           <input type="checkbox" id="15">
+                           <label for="15">11</label>
+                       </li>
+                       <li>
+                           <input type="checkbox" id="16">
+                           <label for="16">12</label>
+                       </li>
+                   </ui>
+               </div>
+               <div class="seatline" style="width:70px">
+                   <ul>
+                       <li>
+                         <div></div>
+                         <input type="checkbox" id="17">
+                         <label for="17">13</label>
+                       </li>
+                       <li class="blank"></li>
+                       <li>
+                           <div></div>
+                           <input type="checkbox" id="19">
+                           <label for="19">14</label>
+                       </li>
+                       <li>
+                           <input type="checkbox" id="20">
+                           <label for="20">15</label>
+                       </li>
+                   </ui>
+               </div>
+               <div class="seatline" style="width:70px">
+                   <ul>
+                       <li>
+                         <div></div>
+                         <input type="checkbox" id="21">
+                         <label for="21">16</label>
+                       </li>
+                       <li>
+                           <div></div>
+                           <input type="checkbox" id="22">
+                           <label for="22">18</label>
+                       </li>
+                       <li>
+                           <div></div>
+                           <input type="checkbox" id="23">
+                           <label for="23">19</label>
+                       </li>
+                       <li>
+                           <input type="checkbox" id="24">
+                           <label for="24">20</label>
+                       </li>
+                   </ul>
+                </div>
+                <div class="seatnoty">
+                    <ul>
+                        <li>
+                           <img src="/img/선택불가.png" alt="이미 예매된 좌석">
+                           <label for="choice">이미 예매된 좌석</label>
+                        </li>
+                        <li>
+                           <img src="/img/선택가능.png" alt="예매 가능 좌석">
+                           <label for="choice">예매 가능한 좌석</label>
+                        </li>
+                    </ul>
+                    <hr width="200px" color="#cdcdcd">
+                    <ul>
+                        <li>
+                            매수: 　　　매
+                        </li>
+                    </ul>
+
+                    <div class="check">
+                        <a class="check" href="#1">
+                          <img src="/img/okay.png" alt="확인버튼입니다">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--밑단 유의사항-->
+            <div class="paperdiv">
+                <div>
+                   <h2>유의사항</h2>
+                   <br>
+               </div>
+               <div class="noty">
+                     
+                   <ul>
+                       <li>예매가능 좌석이 "<strong class="point1">0</strong>" 인 경우 예매가 불가합니다.</li>
+                       <li>예매(또는 취소)단계에서 회선장애나 기타 통신장애 발생 시 예매(취소)여부를 조회를 통해 반드시 직접 확인하셔야 하며, <br>확인하시지 않으신 경우에 부도위약금이 청구될 수 있으니 유의하시기 바랍니다.</li>
+                       <li>소요시간은 도로 및 버스회사의 사정에 따라 변경될 수 있습니다.</li>
+                       <li>미 예매 상태이며 예매시 선택하셨던 좌석은 최소 <strong class="point1">20</strong>분간은 선택 할 수 없습니다.</li>
+                       <li>예매을 하실려면 다른 좌석으로 선택 또는 최소 <strong class="point1">20</strong>분 후에 좌석을 선택하시면 됩니다.</li>
+                   </ul>
+               </div>
+            </div>
+     
+            </div>
+                     </td>
+                 </tr>
+            <tr> 
+                <td>8 : 00</td>
+                <td>고양종합</td>
+                <td>강촌</td>
+                <td>강원고속</td>
+                <td>프리미엄</td>
+                <td>36</td>
+                <td><strong>36</strong></td>
+                <td class="detail"><a href=""><img src="/img/상세보기.png" alt="상세보기입니다"></a></td>
+                <td><a href=""><img src="/img/좌석선택.png" alt="좌석예약입니다"></a></td>
+            </tr>
+        </table>
+       </div>
+        </div> 
+
+        
+    </div>
+
+    </content>
+        
+        
+    <!-- footer -->
+    <footer>
+        <div class="customer">
+            <div class="footer_logo">
+                <a href="index.html">
+                    <img src="img/logo(black).png" alt="임의로고">
+                </a>
+            </div>
+
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">투자정보</a></li>
+                <li><a href="#">채용안내</a></li>
+                <li><a href="#">여객운송약관</a></li>
+                <li><a href="#">홈페이지이용약관</a></li>
+            </ul>
+            <!-- <p>copyright 2019 BitAIR All right reserved.</p> -->
+        </div>
+    </footer>
+</body>
+</html>

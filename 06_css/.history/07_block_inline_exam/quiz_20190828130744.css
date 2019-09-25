@@ -1,0 +1,16 @@
+.container{
+    width: 1000px;
+    height: 300px;
+}
+div, span{
+    width: 100px;
+    height: 100px;
+
+}
+
+h2{
+    
+    border-bottom: 2px solid orange;
+    width: 600px;
+    
+}

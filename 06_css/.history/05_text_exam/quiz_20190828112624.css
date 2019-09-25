@@ -1,0 +1,11 @@
+* {
+    margin: 0px; padding: 0px;
+}
+div{
+    width: 400px;
+    height: 200px;
+        background-image: url("quiz.jpg");
+}
+html, body {
+    height: 100%;
+}

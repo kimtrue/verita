@@ -1,0 +1,7 @@
+.continer {
+    width: 800px;
+    height: 800px;
+    display: grid;
+
+    border: 1px solid black;
+}

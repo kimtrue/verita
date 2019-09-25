@@ -1,0 +1,26 @@
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 1px solid black;
+    height: 200px;
+    width: 400px;
+    word-wrap: break-word; 
+    
+}
+.card__thumb{
+    border: 1px solid black;
+    width: 30%;
+}
+
+.card__body{
+    border: 1px solid black;
+    width: 60%;
+    margin-top: -100px; margin-left: 200px;
+}
+.card__thumb__img { 
+    border-radius: 100%;
+
+    
+}

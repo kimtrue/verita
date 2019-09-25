@@ -1,0 +1,18 @@
+ div{
+     display: inline;
+     
+ }
+.card{
+
+    
+}
+
+
+.card__thumb__img { 
+    border-radius: 100%;
+
+    
+}
+.card_body{
+    display: inline;
+}

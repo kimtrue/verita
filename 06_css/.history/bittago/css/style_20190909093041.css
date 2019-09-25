@@ -1,0 +1,40 @@
+* {
+	margin : 0;
+	padding: 0;
+	list-style:none;
+	/* color:#a0a3a2; */
+	/* font-family:times, '돋음'; */
+	/* font-size:19px; */
+	line-height:1.5;
+	box-sizing : border-box;
+	text-decoration : none;
+}
+body { 
+	/* padding-top: 120px; */
+	font-family: "Noto Sans KR", sans-serif; 
+    min-height:100%;
+    min-width: 100%;
+}
+
+content{
+    position: relative;
+    width: 100%;
+    border: 1px solid #f99;
+}
+
+content > div{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #f99;
+}
+
+.seatbox {
+	
+	width: 80%px;
+	height: 80%;
+	border: 1px solid black;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+
+
+}

@@ -1,0 +1,15 @@
+body {
+    background: white;
+
+}
+
+@media (max-width: 600px) {
+    body {
+        background: rgb(225, 188, 255);
+    }
+}
+@media (max-width: 600px) {
+    body {
+        background: rgb(225, 188, 255);
+    }
+}
