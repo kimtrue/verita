@@ -31,13 +31,13 @@ let func1 = function(){
 //  => console.log(func1);    
  console.log(func1());    
  
- let result = func2(10);
- console.log(result);            
-
-let func2 = function(val){
-    console.log("func2 : ", val);
-    return val * val;
-};
  
+ let func2 = function(val){
+     console.log("func2 : ", val);
+     return val * val;
+};
+    
+    let result = func2(10);
+    console.log(result);            
 
 

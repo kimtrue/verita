@@ -11,3 +11,4 @@
 
  (function () { console.log("호출됨")} )();
  (function (msg) { console.log("호출 : ", msg);} )("빠르다");
+ 

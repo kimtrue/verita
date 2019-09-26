@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+    DOM 이나 FORM은 화면상에 보이고 싶은 부분을 조작한다
+    CSS 의 selector가 중요한 역할을 한다
+
+    Element document.querySelector("css 선택자");
+     -> css 선택자에 해당하는 엘리먼트 하나 반환
+         
+    <element 속성명="속성값">안쪽...</element>
+    -> 안쪽 내용을 바꾸는 작업, 속성값을 바꾸는 작업을 주로 한다
+    
+    안쪽 내용을 변경하고 싶을 때 사용하는 프로퍼티
+    innerHTML : html 태그를 적용해서 보여주는 것 
+    innerText : html 태그를 escape 처리해서 문자형태로 출력 
+
+    ex) <br/> 을 준다면 innerHTML은 줄넘김처리가 되고, innerText는 <br/> 이 그대로 나온다 
+  
+    <span> 문서내에서 특정부분을 바꿔야하는 곳에 주로 사용한다 
+    ex)메일 0개에서 1개로 증가 ++ 처럼 숫자가 바껴야하는 곳에  
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>엘리먼트 접근하기</h2>
+    <p id="food">
+        모든음식에는 <span id="s1">정성이</span> 들어가야 맛이있다
+    </p>
+    <button type="button" 
+            onclick="doAction()">클릭</button>
+    <!--다른 페이지의 자바스크립트 가져오기-->
+    <script src="./test27.js"></script>        
+
+    
+
+    
+</body>
+</html>

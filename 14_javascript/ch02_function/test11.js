@@ -13,6 +13,8 @@
 //  let f1 = func(); // 실행문. return 이 없어서 undefined
  let f1 = func; //f1의 type은 function
  let f2 = f1;//f2의 type은 function
+ let f3 = func();
  func();
  f1(); //possible
  f2(); //possible
+console.log(f3);

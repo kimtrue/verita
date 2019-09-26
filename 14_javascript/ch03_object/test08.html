@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Member(id, name, email){
+            //새롭게 생성되는 공간에 id, name , email 을 사용하고싶다 
+            this.id = id;
+            this.name = name;
+            this.email = email;
+            //같은 값이고 같은 코드인데 이것을 계속 생성하니까 비효율 적이다.
+            //같이 볼 수 있는 공간을 만들어서 사용해보자...=> 프로토타입(prototype) 공간
+            //멤버객체를 만들 때 Member란 함수를 통해 만들었다
+            /**
+             * m1 객체를 만든 Member().  m1 객체의 부모라고 한다
+             * 프로토타입 공간은  Member()의 
+             * 
+             *  모든 함수는 프로토타입 공간을 갖고있다
+             *  함수의 프로토타입이라는 프로퍼티.
+             *  프로토 타입의 값은 객체. 또다른 객체 공간을 가르키고 있다. 멤버함수의 프로토타입 공간(이름이 없어서)
+             *  m1, m2 가 만들어졌는데  Member의 프로토타입을 다 공유 바라보고있다
+             *  이 공간에  info를 만든다면 Member()를 통해서 모든 생성 객체들이 접근 가능해진다 
+             * 
+             * 
+             */
+            this.info = function() {
+                console.log(this.id, this.name, this.email);
+            }
+        }
+        let m1 = new Member("jay", "재현", "jay@a.com");
+        console.dir(m1);
+        m1.info();
+    </script>
+</body>
+</html>
