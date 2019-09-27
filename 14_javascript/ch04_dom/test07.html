@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       <h1>Dom 퀴즈</h1>
+   </div>
+   <div id="here"></div>
+   <div class="box">
+       <ul>
+           <li>
+               <a href="#" onclick="doAction(1)">
+                문자열 박스 생성
+               </a>
+           </li>
+           <li>
+               <a href="#" onclick="doAction(2)">
+                비밀번호 박스 생성
+               </a>
+          </li>
+           <li>
+               <a href="#" onclick="doAction(3)">
+                체크 박스 생성
+               </a>
+          </li>
+           <li>
+               <a href="#" onclick="doAction(4)">
+                라디오 버튼 생성
+               </a>
+           </li>
+           <li>
+               <a href="#" onclick="doAction(5)">
+                버튼 생성
+               </a>
+           </li>
+           <li>
+               <a href="#" onclick="doCombo()">
+                콤보박스 생성
+               </a>
+           </li>
+       </ul>
+   </div>
+
+   <script>
+       
+       
+       
+    function append(msg, type){
+       let inpEle = document.createElement("input");
+          inpEle.setAttribute("type", type);
+          inpEle.setAttribute("width", 200);
+          inpEle.setAttribute("height", 100);
+        
+          document.querySelector("#here").append(document.createTextNode(msg));
+          document.querySelector("#here").append(inpEle);
+          document.querySelector("#here").append(document.createElement("br"));
+           
+    }
+    
+    
+    
+    
+    function doAction(num){
+        switch(num){
+            case 1: append("문자열", "text");
+                     break;
+            case 2: append("비밀번호", "password");
+                    break;  
+            case 3: append("체크박스", "checkbox");
+                    break;  
+            case 4: append("라디오", "radio");
+                    break;  
+            
+            case 5  : let inpEle = document.createElement("button");
+                      inpEle.setAttribute("type", "button");
+                      inpEle.append(document.createTextNode("버튼"));
+                      document.querySelector("#here").append(inpEle);
+                      document.querySelector("#here").append(document.createElement("br"));
+                      break;
+
+            }
+
+       }
+
+
+        function doCombo(){
+            let inpEle = document.createElement("select");
+            for(let i = 1; i < 7; i++){
+                let optionEle = document.createElement("option");
+                optionEle.append(document.createTextNode(`콤보${i}`));
+                inpEle.append(optionEle);                
+
+            }               
+            document.querySelector("#here").append(inpEle);
+            document.querySelector("#here").append(document.createElement("br"));
+            
+        }
+        
+        </script>
+
+
+    
+</body>
+</html>

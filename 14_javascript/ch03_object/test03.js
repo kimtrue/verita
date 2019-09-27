@@ -32,3 +32,4 @@
 
  //work 부르기
  console.log(obj.work());
+ 

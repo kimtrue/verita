@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="doAdd();">추가</button>
+    <div id="list"></div>
+    <script>
+        function doAdd() {
+            let imgEle = document.createElement("img");
+            //생성된 태그에 속성추가 : setAttribute 을 사용한 속성 추가는 태그의 정의된 속성이 아닌것도 가능
+            imgEle.setAttribute("src", "짱절미.jpg");
+            imgEle.setAttribute("width", 200);
+            imgEle.setAttribute("height", 100);
+            //지원하지 않는 사용자 지정 속성 정의. -을 붙이는 이유는 표준이라서...
+            imgEle.setAttribute("data-msg", "사용자 지정 속성"); // 코드를 짤 때 편리성을 위해 가끔 생성된 태그에 속성을 추가해서 사용한다
+
+            //id가 list엘리먼트에 생성된 imgEle를 자식으로 추가하려고한다
+            let listEle = document.getElementById("list");
+            listEle.appendChild(imgEle);
+
+
+        }
+    </script>
+    
+</body>
+</html>

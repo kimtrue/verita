@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+         자바스크립트에서 엘리먼트 접근
+
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="doAction(1);">태그 선택</button>
+    <button type="button" onclick="doAction(2);">아이디 선택</button>
+    <button type="button" onclick="doAction(3);">클래스 선택</button>
+    <div>테스트1</div>
+    <div id="a">테스트2</div>
+    <div class="b">테스트3</div>
+   
+   
+    <script>
+        function doAction(comm){
+            // console.log(comm);
+            switch(comm){
+                
+                case 1: //태그로 접근
+                    let list = document.getElementsByTagName("div");
+                    //모든 div들의 참조를 갖고온다
+                    //하나씩 꺼내기
+                    for(let i = 0; i < list.length; i++){
+                        console.log(list[i].innerText);
+                    }
+                    break;
+                case 2:
+                    //id가 a인거 접근하기
+                    //         document.querySelector("#a");
+                    let aDib = document.getElementById("a");
+                    console.log(aDib.innerText);
+                    break;
+                    case 3:
+                            // document.querySelectorAll(".b");
+                    let bDiv = document.getElementsByClassName("b");
+                    //Elements 배열로 온다. 클래스는 여러개 올 수 있으니까
+                    for(let i = 0; i < bDiv.length; i++){
+                        console.log(bDiv[i].innerText);
+                    }
+                    break;
+            }
+            
+        }
+    </script>
+</body>
+</html>

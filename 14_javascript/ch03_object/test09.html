@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function Member(id, name, age) {
+             this.id = id;
+             this.name = name;
+             this.age = age;
+            //  this.info = function(){
+            //      console.log(this.id, this.name, this.age);
+            //  }
+         }
+         //멤버 프로토타입에 인포를 추가하겠다.
+         Member.prototype.info = function(){
+               console.log(this.id, this.name, this.age);
+        };
+
+
+         let m1 = new Member("jay", "정", 24);
+         let m2 = new Member("mark", "이", 21);
+         //m2함수에 info를 추가. 이 info는 멤버가 아닌 m2가 재정의한 info함수가 호출
+         m2.info = function(){
+             console.log("m2 이마크다");
+         }
+        //  console.log(m1);
+         console.log(m2);
+        // m1.info();
+        m2.info();
+         
+
+
+
+    </script>
+</body>
+</html>

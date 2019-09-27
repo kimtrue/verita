@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Member(id, name){
+            this.id = id;
+            this.name = name;
+        }
+        //멤버 프로퍼티에 바로 집어넣기
+        Member.prototype = {
+            //프로포티명: 키 밸류
+            setId:  function(id){this.id = id;},
+            getId:  function(){return this.id;},
+            setName: function(name){this.name = name;},
+            getName: function(){return this.name;},
+            //컨스트럭터 추가해주기.
+            constructor : Member
+        }
+        console.log(Member);
+        console.dir(Member);
+
+       /* 위의 것으로 대체
+        Member.prototype.setId = function(id){
+           //객체의 id프로퍼티에 추가하겠다
+           this.id = id;
+        }
+        Member.prototype.getId = function(id){
+           return this.id;
+        }
+        Member.prototype.setName = function(name){
+           this.name = name;
+        }
+        Member.prototype.getName = function(name){
+           return this.name;
+        }
+        */
+
+
+
+
+    </script>
+</body>
+</html>

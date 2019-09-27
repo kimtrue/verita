@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="doAdd()">추가</button>
+    <div id="here"></div>
+
+
+    <script>
+        let count = 1;
+        function doAdd(){
+            let divEle = document.createElement("div");
+            divEle.setAttribute("id", `div${count}`)   
+            let textNode = document.createTextNode(`추가된 DIV id : child_${count}`);
+            let delEle = document.createElement("button");
+            
+            delEle.setAttribute("onClick", `doDel(${count})`);
+            delEle.append(document.createTextNode("삭제")); 
+            divEle.append(textNode); 
+            divEle.append(delEle); 
+            
+            document.querySelector("#here").append(divEle); 
+            count++;  
+
+        }
+
+        function doDel(count) {
+            let buEle = document.querySelector(`#div${count}`);
+            buEle.remove();
+        }
+    </script>
+
+    
+</body>
+</html>
