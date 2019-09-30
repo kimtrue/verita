@@ -1,0 +1,72 @@
+<!--
+    select 박스의 동적인 생성과 삭제
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="mForm">
+        <div>
+            <button type="button" onclick="doAdd();">추가</button>
+            <button type="button" onclick="doDel();">삭제</button>
+        </div>
+        <div>
+            <select name="sel">
+                <option value="">선택</option>
+            </select>
+        </div>
+
+    </form>
+
+    <script>
+        function doAdd() {
+            //셀렉박스 추가하게
+            let f = document.mForm;
+            let selBox = f.sel;
+            /**
+             * innerHTML을 이용
+             */ 
+            selBox.innerHTML += "<option value='0'>aaa</option>";
+
+
+
+
+
+            /**
+             * 2. 자바스크립트 생성자 활용하기
+             //selBox.options.length는 마지막 인덱스값에 추가해라
+             selBox.options[selBox.options.length] = new Option("aaa", "0");
+           */ 
+
+
+
+
+            /**
+             * 1. dom api 추가하기
+             console.log("추가함수 호출됨");
+             let f = document.mForm;
+             let selBox = f.sel;
+             let opt = document.createElement("option"); //<option></option>
+             //value 속성 추가하기 표준속성이면 .value
+             opt.value = 0;//<option value="0"></option>
+             let text = document.createTextNode("aaa"); //aaa
+             opt.append(text); //<option value="0">aaa</option>
+             selBox.append(opt); //<select><option value="0">aaa</option></select>
+           */
+        }
+        function doDel() {
+            //option의 길이값을 줄여주는 것
+            let f = document.mForm;
+            let selBox = f.sel;
+            selBox.options.length = 1;
+
+        }
+    </script>
+    
+</body>
+</html>

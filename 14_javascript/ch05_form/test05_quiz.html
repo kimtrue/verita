@@ -1,0 +1,155 @@
+<!--  
+	폼 관련 퀴즈 - 1
+	https://drive.google.com/open?id=1QsCQ99zQTBxLo6XVEffSR9D8FH1Hv3MN
+	동영상 다운로드 후 기능 구현하기
+
+
+아이디 4자 이상 8자 이하 alert
+비밀번호 입력
+비밀번호 확인
+
+경력 경력셀렉트 확인
+3개월 미만
+3개월 이상
+6개월 이상
+1년이상
+2년이상
+3년이상
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.container {
+	   width: 800px;
+	   margin-left: 10px;
+    	overflow: hidden;
+	   
+	}
+	input[type="text"]{
+		width: 80px;
+	}
+	input[type="password"]{
+		width: 120px;
+	}
+	
+	
+
+</style>
+</head>
+<body>
+	
+	<form name="mForm"  onsubmit="return doCheck();">
+		<div class="container">
+			<div>
+				<label>　　이름 </label>
+				<input type="text" name="uName" />
+			</div>
+			<div>
+				<label>　아이디</label>
+				<input type="text" name="id" />
+			</div>
+			<div>
+				<label>비밀번호</label>
+				<input type="password" name="pw" />
+				<label>비밀번호 확인</label>
+				<input type="password" name="pwCheck" />
+			</div>
+			<div>
+				<label>경력여부</label>
+				<input type="checkbox" id="fresh" name="exchk" onclick="doDisa();"/>
+				<label for="fresh">신입</label>
+				<input type="checkbox" id="expe" name="exchk"/>
+				<label for="expe">경력</label>
+				<select name="expsel">
+					<option>선택</option>
+					<option>3개월 미만</option>
+					<option>3개월 이상</option>
+					<option>6개월 이상</option>
+					<option>1년이상</option>
+					<option>2년이상</option>
+				</select>
+			</div>
+			<div>
+				<label>이메일 수신</label>
+				<input type="text" id="email" />
+				<input type="checkbox" id="emailCheck"/>
+				<label for="emailCheck">메일수신</label>
+				
+			</div>
+
+			<div style="text-align: center;">
+				<button>확인</button>
+			</div>
+			
+		</form>
+
+		<script>
+			let f = document.mForm;
+			let un = f.uName;
+			let uid = f.id;
+			let upw = f.pw;
+			let fresh = document.getElementById("fresh");
+		  
+			//신입체크박스 선택시 비활성화
+			function doDisa() {
+				if(fresh.checked){
+				  f.expsel.disabled = true;
+			    } else {
+				  f.expsel.disabled = false;
+     		   	}
+ 			}
+			
+
+			function doCheck(){
+				if(isEmpty(un, "이름을 입력하세요")) return false;
+				if(isEmpty(uid, "아이디를 입력하세요")) return false;
+				if(isEmpty(f.pw, "비밀번호를 입력하세요")) return false;
+				if(isEmpty(f.pwCheck, "비밀번호를 다시 입력하세요")) return false;
+				if(isEmpty(uch, "경력사항을 체크해주세요")) return false;
+				if(isEmpty(f.email, "이메일 주소를 입력하세요")) return false;
+			    
+				
+				return true;
+			}
+
+			
+			function isEmpty(ele, msg){
+				if(ele.value == ""){
+					alert(msg)
+					ele.focus();
+					return true;
+				} 
+				if(ele == uid){
+				    if(uid.value.length < 4 || uid.value.length > 8) {
+					   alert("아이디는 4자 이상 8자 이하입니다")
+					   un.focus();
+					   return true;
+					}
+				}
+				if(ele == f.pwCheck){
+					if(upw.value != f.pwCheck.value){
+					   alert("비밀번호가 맞지 않습니다")
+					   f.pwCheck.focus();
+					   return true;
+					}
+				}
+				if(ele == uch){
+				  if(uch[1].checked){
+
+				  }	
+				  if(uch[0].checked) {}
+				  return true;
+				}
+					
+					
+				return false;				
+			}
+		</script>
+		
+	</div>
+</body>
+</html>

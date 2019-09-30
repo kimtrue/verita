@@ -1,0 +1,114 @@
+<!-- 
+    체크박스 처리하는 방식
+   
+    체크박스의 상태를 알아야한다
+    : 체크박스 객체를 먼저 접근한다음 체크박스객체.checked 
+      (true: 체크되어있는 것, false: 체크가 해제되어있는 것)
+
+    체크상태 설정
+    : 체크박스객체.checked = true; 체크박스가 체크된 상태 
+    : 체크박스객체.checked = false; 체크를 풀어라 
+                  
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="mForm">
+        <button type="button" onclick="chk();" >확인</button>
+        <button type="button" onclick="chkCount();" >체크된 개수</button>
+        <div>
+            <input type="checkbox" id="all" name="all" value="all" onclick="doCheck()">
+            <!--label의 for는 input id와 묶이는 것-->
+            <label for="all">전체</label>
+            <span id="cnt"></span>
+        </div>
+        <div>
+                <input type="checkbox" id="menu1" name="menu" value="1">
+                <!--label의 for는 input id와 묶이는 것-->
+                <label for="menu1">양식</label>
+                <input type="checkbox" id="menu2" name="menu" value="2">
+                <!--label의 for는 input id와 묶이는 것-->
+                <label for="menu2">한식</label>
+                <input type="checkbox" id="menu3" name="menu" value="3">
+                <!--label의 for는 input id와 묶이는 것-->
+                <label for="menu3">중식</label>
+                <input type="checkbox" id="menu4" name="menu" value="4">
+                <!--label의 for는 input id와 묶이는 것-->
+                <label for="menu4">분식</label>
+
+        </div>
+
+
+
+    </form>
+
+    
+    <script>
+        function chkCount(){
+            //메뉴들이 체크되어있나 확인
+            let f = document.mForm;
+            let menu = f.menu;
+            let menuCnt = 0;
+            for ( let i = 0; i < f.menu.length ; i++){
+                   if(menu[i].checked) menuCnt++;
+            }
+            document.querySelector("#cnt").innerText = menuCnt + "개";    
+        }
+        //전체를 눌렀을 때 다 체크되게 하기
+        function doCheck(){
+            // console.log("두체크 호출됨");
+            let f = document.mForm;
+            let menu = f.menu;
+            //체크박스 여러개일때
+             //all이 체크될때 , 나머지도 체크 , 체크해제하기
+                for ( let i = 0; i < f.menu.length ; i++){
+                   menu[i].checked = f.all.checked;
+                }
+
+            //    
+              
+           
+
+        }
+        function chk(){
+            let f = document.mForm;
+            let menu = f.menu;
+            /**
+            name이 menu인 체크상태를 보고싶다
+            name이 menu인 것은 하나가 아닌 여러 개라 배열로 몇개있는지 몰라서 undefined로 넘어온다
+            하나일때는 true가 나오지만.. 
+            하나일 경우와 여러개일 경우를 분리해서 사용해야한다.
+            어떻게 알 수 있을까 ??? length를 이용해보자
+            */
+            // console.log(menu.length);
+            //여러개인경우 반복을 돌려줘라
+            if(menu.length){
+                for ( let i = 0; i < f.menu.length ; i++){
+                    console.log(menu[i].checked);
+                }
+            } 
+            //하나일때는
+            else{
+                console.log(menu.checked);
+            }
+            
+
+
+
+            // console.log("체크박스 함수 호출됨");
+            //체크상태 보여주기
+            //f의 아이디가 all인 것 
+            console.log(f.all.checked); //true면 체크상태 false면 해지
+        }
+    </script>
+
+    
+</body>
+</html>

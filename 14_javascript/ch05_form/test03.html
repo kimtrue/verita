@@ -1,0 +1,70 @@
+<!--
+    select 객체 사용하기
+    1. 현재 셀렉박스의 선택된 위치
+    2. 동적으로 셀렉박스 추가
+
+    선택된건 어떻게 알까?
+    select객체.selectedIndex : 셀렉박스가 몇번째 선택되었는지나온다
+    select객체.selectedIndex = 숫자; : 숫자 위치를 선택하게 한다
+    select객체.options : options 항목들의 배열
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="mForm">
+        <div>
+            <select name="search">
+                <option>선택</option>
+                <option>작성자</option>
+                <option>제목</option>
+                <option>제목+작성자</option>
+            </select>
+            <button type="button" onclick="doSearch()">검색</button>
+            <button type="button" onclick="doUse(false)">활성화</button>
+            <button type="button" onclick="doUse(true)">비활성화</button>
+        </div>
+    </form>
+
+    <script>
+      function doSearch(){
+          let f = document.mForm;
+          let selEle = f.search; //셀렉박스 객체
+          if(selEle.selectedIndex == 0 ) {//맨 첫번째 항목 그러니까 option이 선택인 것
+            alert("검색항목을 선택하세요");
+            return;
+        }
+        alert("검색진행함..");
+        //검색하고와서 다시 선택으로 
+        selEle.selectedIndex = 0;
+    }
+    
+    function doUse(status){
+        let f = document.mForm;
+        //활성화 비활성화 disable
+        f.search.disabled = status; 
+        
+      
+
+    }
+    function doUnuse(){
+
+    }
+
+
+
+
+    </script>
+    
+    
+    
+    
+</body>
+</html>

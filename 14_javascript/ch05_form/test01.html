@@ -1,0 +1,164 @@
+<!--
+   submit 전에 사용자의 입력값을 체크하려면?? 
+     onsubmit="함수"
+
+   submit에 페이지 이동을 막으려면 ?
+    onsubmit="return false;" 
+
+   onsubmit이 중복으로 사용된다면?
+   onsubmit="return chkForm();"  
+   function chkForm(){
+       return false; 
+   }  
+
+   입력값이 없을 때 false 주기
+
+
+   1. button의 기본 타입은 submit이기 때문에 form으로 감싸져 있다면 form으로 submit 된다
+   2. 만약 타입버튼으로 같이 사용해야하는 케이스라면 버튼은 
+      사용자가 직접 처리해야할 일에 대해 지정할 수 있다
+      submit기능이 없으니 . form 을 찾고 submit함수를 호출시켜준다
+      action값도 변경 가능하다
+    3. a 링크는 href로 옮기기 때문에 .. script처리
+    4. 현재 코드는 javascript라는 걸 인식시켜서 처리할 수 있다  
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="mForm" action="a.html" onsubmit="return chkForm();">
+      <div>
+          <label>아이디 : </label>
+          <input type="text" name="id"/>
+          <br>
+          <label>비밀번호 : </label>
+          <input type="password" name="pw" />
+         
+      </div>
+      <br>
+      <button>클릭</button>
+      <button type="button" onclick="chkForm2();">클릭2</button>
+      
+    </form>
+    <form name="sForm" action="b.html">
+        <!--버튼이 없다-->
+        <div>
+            <label>아이디 : </label>
+            <input type="text" name="id"/>
+            <br>
+            <label>비밀번호 : </label>
+            <input type="password" name="pw" />
+           
+        </div>
+    </form>
+  
+    <!--버튼을 눌렀을 때-->
+    <button type="button" onclick="chkForm2();">클릭</button>
+    <form name="deleteForm" method="post" action="b.html">
+        <input type="hidden" name="deleteNo" value="" />
+    </form>
+    <!--버튼과 비슷-->
+    <a href="#123" onclick="chkForm3();">클릭3</a>
+    <a href="javascript:chkForm3()">클릭3</a>
+
+
+
+
+    <script>
+        function chkForm3(){
+            //id와 pw의 엘리먼트의 값이 올바른 경우 mForm 폼을 서브밋한다
+            // let f = document.mForm; 
+            let f = document.deleteForm; 
+            
+            f.deleteNo.value = 10; //10번을 삭제하여라
+            //deleteForm의 action을 변경하자
+            f.action = "c.html";
+
+
+            //f의 form을 서브밋하라
+            f.submit();
+        }
+        function chkForm2(){
+            //id와 pw의 엘리먼트의 값이 올바른 경우 mForm 폼을 서브밋한다
+            // let f = document.mForm; 
+            let f = document.sForm; 
+            
+            f.deleteNo.value = 10; //10번을 삭제하여라
+
+
+            //f의 form을 서브밋하라
+            f.submit();
+        }
+
+
+
+        function chkForm(){
+            //mFrom에 접근하기
+            // let idEle = document.mForm.id 
+            // let pwEle = document.mForm.pw 
+
+            //변수에 담아 단축해보자
+            let f = document.mForm;
+            let idEle = f.id; 
+            let pwEle = f.pw;
+
+
+      /*
+            // alert("서브밋함수 호출됨")
+            //name이 id인 입력창의 값이 없다면 submit을 중단(return false)
+            let idEle = document.querySelector("input[name='id']");
+            //password도 체크
+            let pwEle = document.querySelector("input[name='pw']");
+        */
+
+            //값이 있는지 확인은 ? 
+            // input에 value 속성을 확인해야한다
+            console.log(idEle.value);
+            /*
+            if(idEle.value == ""){
+                alert("아이디를 입력하세요");
+                //입력을 하지 않았다면 아이디창으로 커서가 들어간다
+                idEle.focus();
+                return false; //페이지이동X
+            }
+            */
+           /*
+           if(pwEle.value == ""){
+               alert("패스워드를 입력하세요");
+               //아이디창이 활성화
+               pwEle.focus();
+               return false; //페이지이동X
+            }
+            */
+           //비어있다면
+           //isEmpty함수로 바꿔줬다.
+           if(isEmpty(f.id, "아이디를 입력하세요")) return false;    
+           if(isEmpty(f.pw, "패스워드를 입력하세요")) return false;    
+           return true;
+
+            
+        }
+
+
+        //중복이 되니 함수로 만들어보자
+        function isEmpty(ele, msg){
+            if(ele.value == ""){
+                alert(msg)
+                ele.focus();
+                return true; 
+            }
+            //호출한 쪽으로 결과값 넘기기
+            return false;
+
+        }
+    </script>
+    
+</body>
+</html>
