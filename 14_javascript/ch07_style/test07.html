@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+           margin-top: 50px;
+           width: 500px;
+           height: 300px;
+           font-size: 30px;
+           border: 5px solid salmon;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button onclick="show('movie')">영화</button>
+        <button onclick="show('music')">음악</button>
+        <button onclick="show('book')">책</button>
+       
+    </p>
+    <div id="movie">
+        <h1>반지의 제왕</h1>
+        <h2>왕의 귀환</h2>
+    </div>
+    <div id="music">
+        <h1>Nct Dream</h1>
+        <h2>Boom</h2>
+    </div>
+    <div id="book">
+        <h1>어린왕자</h1>
+        <h2>생텍쥐베리</h2>
+    </div>
+
+    
+
+    <script>
+        //처음에 영화만 보여주려고
+        show("movie");
+        function show(name){
+              document.querySelector("#movie").style.display = "none";
+              document.querySelector("#music").style.display = "none";
+              document.querySelector("#book").style.display = "none";
+
+              document.querySelector(`#${name}`).style.display = "block";
+
+
+            /*
+             너무 하드코딩
+            if(name === "music") {
+              document.querySelector("#movie").style.display = "none";
+              document.querySelector("#music").style.display = "block";
+              document.querySelector("#book").style.display = "none";
+            }  
+            else if (name ==="book"){
+              document.querySelector("#movie").style.display = "none";
+              document.querySelector("#music").style.display = "none";
+              document.querySelector("#book").style.display = "block";
+
+            }
+            else {
+              document.querySelector("#movie").style.display = "block";
+              document.querySelector("#music").style.display = "none";
+              document.querySelector("#book").style.display = "none";
+            }  
+            */
+
+
+        }
+    </script>
+    
+</body>
+</html>

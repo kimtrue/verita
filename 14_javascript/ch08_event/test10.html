@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        keydown : 
+        e.target - 입력되기 전에 메모리에 호출된다
+        아직내가 입력한게 메모리에만 있지 입력은 되지 않았다
+    -->
+    <h2>키 이벤트 활용하기</h2>
+    <!--6글자만 입력하고싶다-->
+    
+        <input type="text" id="msg1" /> <span>6자만 입력</span>
+        <input type="text" id="msg2" /> <span>영어, 숫자만 입력</span>
+        <input type="text" id="msg3" /> <span>숫자만 입력</span>
+
+    <script>
+        let msg2 = document.querySelector("#msg2");
+        msg2.addEventListener("keyup", (e)=>{
+            // e.target.value = e.target.value.replace(한글, "");
+            ///[ㄱ-ㅎㅏ-ㅣ가-힣]/g     /~/ 정규표현식을 사용하겠다 g global
+            e.target.value = e.target.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g, "");
+        });
+
+        let msg3 = document.getElementById("msg3");
+        msg3.addEventListener("keyup", (e)=>{
+            e.target.value = e.target.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/g, "");
+
+        });
+
+
+
+
+        let msg1 = document.querySelector("#msg1");
+        
+
+        msg1.addEventListener(`keydown`, (e)=> {
+            let ele = e.target;
+            let val = ele.value;
+            console.log(ele.value, ele.value.length);
+            // 6글자까지만 입력되게 
+            if(val.length < 6) return;
+
+
+            // crtl + v 복붙한 경우의 체크
+            if(e.key ==="v" && e.ctrlKey){
+                //한글이 들어오면
+                 setTimeout(()=>{
+                     //keydown이 끝났을 때 호출
+                     if(e.target.value.length > 6) {alert("내용은 6자까지 가능합니다");
+                    e.target.value = e.target.value.substr(0, 6);}
+                 }, 10);
+            }
+
+            /*
+             특수키들은 입력은 가능하게 설정
+               8번키  backspace 키 
+               37번키 화살표 왼쪽
+               46번키 delete키 
+            */
+            // if(e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 46) return;
+            if([8,37,46].indexOf(e.keyCode) != -1 ) return;
+            e.preventDefault();
+
+            //한글도 막기 
+            //지정된 시간 이후에 호출된다
+            setTimeout(()=>{
+                ele.value = ele.value.substr(0, 6);
+            }, 10);
+
+            //복붙 막기 복붙은 ctrl+d 를 하나의 글자로 인식해서 6글자가 넘어도 쓸 수 있다 blur  onblur
+            msg1.addEventListener("blur", (e) => {
+                e.target.value = e.target.value.substr(0, 6);
+            });
+
+
+
+
+
+
+        });
+    </script>
+    
+</body>
+</html>

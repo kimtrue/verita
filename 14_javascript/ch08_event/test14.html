@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dropzone{
+            width: 600px;
+            height: 200px;
+            border: 2px solid burlywood;
+        }
+    </style>
+</head>
+<body>
+    <h2>이미지를 드래그 하세요</h2>
+   
+    <img id="img2" src="ddd.jpg" width="170" height="120" draggable="true" />
+    <!--이벤트를 중단시키고 드랍시킨다 ondragover return false -->
+    <div id="dropzone" ondragover="return false;"></div>
+   
+
+    <script>
+        let img2 = document.querySelector("#img2");
+        //드래그가 최초 발생되었을 때
+        // img2.ondragstart
+        img2.addEventListener("dragstart", (e) => {
+            console.log("드래그시작");
+        });
+        
+        //drop 이벤트
+        let dropzone = document.querySelector("#dropzone");
+        dropzone.addEventListener("dragenter", (e)=>{
+            console.log("드랍존에 들어옴");
+        });
+       
+        dropzone.addEventListener("dragleave", (e)=>{
+            console.log("드랍존에 빠져나감");
+        });
+
+
+        //드래그 상태에서 마우스를 놓았을 때..
+        dropzone.addEventListener("drop", (e)=>{
+            console.log("드랍됨");
+        });
+
+
+
+    </script>
+    
+    
+</body>
+</html>

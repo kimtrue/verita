@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2 {
+            transition: 2s; 
+        }
+    </style>
+</head>
+<body>
+    <h2 onclick="changeCss();">CSS 적용하기</h2>
+    <script>
+        function changeCss() {
+            let h2Ele = document.querySelector("h2");
+            h2Ele.style.border = "2px solid #black"
+            h2Ele.style.background = "#654";
+            h2Ele.style.color = "whitesmoke";
+            h2Ele.style.margin = "30px";
+            h2Ele.style.padding = "30px";
+            h2Ele.style.height = "100px";
+            h2Ele.style.borderRadius = "30px";
+
+            //text-align 은 -빼고 대문자로
+            h2Ele.style.textAlign = "center";
+            h2Ele.style.lineHeight = "100px";
+
+
+        }
+
+    </script>
+</body>
+</html>

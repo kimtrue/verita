@@ -1,0 +1,75 @@
+<!--
+    이벤트 삭제
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            button{
+                width: 200px;
+                height: 100px;
+                color: antiquewhite;
+                background: rgb(69, 69, 131);
+                font-size: 25px;
+                font-weight: bold;
+            }
+        </style>
+</head>
+<body>
+    <h2>고전 이벤트 설정 삭제</h2>
+    <div>
+        <button id="btn1">시작</button>
+        <button id="btn2">중지</button>
+    </div>
+
+    <script>
+        let btns = document.querySelectorAll("button");
+        for(let i = 0; i < btns.length ; i++) {
+            // console.log(btns[i]);
+            /*
+            btns[i].onclick = function () {
+                console.log(this); //this는 btn
+                console.log(this.id); //thisid는 btn1
+            };
+            */
+            /*
+            화살표함수
+            this가 window이기때문에 버튼의 id를 얻기위해서..
+            이벤트 객체를 활용 :
+              (객체를 넣는다) =>
+            */
+            btns[i].onclick = (e) => {
+                // console.log(this); //this는 window
+                // console.log(this.id); //thisid는 undefined
+
+                /*
+                //event 발생 객체
+                console.log(e.target); //버튼객체
+                console.log(e.target.id); //버튼객체
+                console.log(e.offsetX) 
+                */
+
+                //offset 버튼과 연관이 되어있다
+                 
+                //클릭한 버튼의 x, y 좌표
+                console.log(e.target.offsetLeft, e.target.offsetTop); 
+                //버튼 자체의 클릭한 x와 y 좌표 
+                console.log(e.offsetX, e.offsetY);
+                //문서의 끝점과 클릭한 지점까지의 거리
+                console.log(e.pageX, e.pageY); 
+                
+            };
+
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

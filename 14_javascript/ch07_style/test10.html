@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+          position: absolute;
+          top: -410px;/*숨기기*/
+          left: 200px;
+          color: whitesmoke;
+          width: 500px;
+          height: 400px;
+          border: 2px solid rgb(250, 157, 147);
+          font-size: 50px;
+          font-weight: bold;
+          padding: 20px;
+          box-sizing: border-box;
+          transition: 1s;
+          
+      }
+      #s1 {
+        background: rgb(95, 95, 95);
+ 
+      }
+      #s2 {
+        background: rgb(69, 59, 104);
+      }
+      #s3 {
+        background: rgb(148, 144, 96);
+      }
+      #s4 {
+        background: rgb(59, 104, 73);
+      }
+      #s5 {
+        background: rgb(112, 133, 192);
+      }
+       
+
+      .hidden {
+          top: -410px;
+      }
+      .show {
+          top: 100px;
+      }
+</style>
+<body>
+    <a href="#" onclick="next(2);">이전 슬라이드</a>
+    <a href="#" onclick="next(1)">다음 슬라이드</a>
+  
+       <div id="s1">
+           슬라이드 1
+       </div>
+       <div id="s2">
+           슬라이드 2
+       </div>
+       <div id="s3">
+           슬라이드 3
+       </div>
+       <div id="s4">
+           슬라이드 4
+       </div>
+       <div id="s5">
+           슬라이드 5
+       </div>
+   
+    <script>
+            let length = document.querySelectorAll("div").length;
+            let num = 1;
+        
+        function next(type){
+            switch(type){
+                case 1:
+                if(num > length){
+                    alert("마지막 슬라이드입니다");
+                 } else {
+                    let d1Ele = document.querySelector(`#s${num}`);
+                    d1Ele.classList.add("show");
+                    num++;
+                 }
+                break;
+
+                case 2:
+                  let d1Ele = document.querySelector(`#s${--num}`);
+                  d1Ele.classList.toggle("show");
+                 if(num == 1){
+                    alert("첫번째 슬라이드입니다");
+                  d1Ele.classList.add("show");
+                   }        
+                 break;
+            }
+        }
+
+    </script>
+
+
+       
+
+
+    
+</body>
+</html>

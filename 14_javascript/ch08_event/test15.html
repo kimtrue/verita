@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            #dropzone{
+                width: 90%;
+                height: 200px;
+                border: 2px solid burlywood;
+                
+            }
+        </style>
+</head>
+<body>
+    <h2>이미지를 드래그해라</h2>
+    <img id="img1" src="짱절미.jpg" width="300" height="220" draggable="true" />
+    <img id="img2" src="ddd.jpg" width="300" height="220" draggable="true" />
+    <div id="dropzone" ondragover="return false"></div>
+
+    <script>
+        //이미즈를 드래그했을 때 dropzone에 복사가 되게.
+        /* 드래그를 시작했을 때 어떤 이미지가 드래그 됐는지 
+        */
+        let img1 = document.querySelector("#img1");
+        let img2 = document.querySelector("#img2");
+
+        img1.addEventListener("dragstart", imgStart);
+        img2.addEventListener("dragstart", imgStart);
+
+        function imgStart(e){
+            let id = e.target.id; 
+            console.log(id);
+            //데이터 설정setData(키, 밸류값);
+            e.dataTransfer.setData("imgId", id);
+        }
+
+        let dropzone = document.querySelector("#dropzone");
+        dropzone.addEventListener("drop", (e) => {
+            let dropImgId = e.dataTransfer.getData("imgId");
+            console.log(dropImgId); 
+            //dropzone 객체에 추가하겠다 드랍한 이미지를 cloneNode() 기존 것은 놔두고 복사
+            dropzone.append(document.getElementById(dropImgId).cloneNode());
+
+        });
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

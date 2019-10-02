@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            border: 3px solid rgb(173, 145, 131);
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        이벤트 전파 : 
+         이벤트 전파를 위해서 부모 자식 관계가 되어야한다
+         나를 감싸고 있는 부모가 같은 이벤트를 갖고있으면 
+         내가 이벤트를 호출할 때 부모의 이벤트도 같이 호출된다
+
+         이벤트의 방향 :
+          나 -> 부모 -> 부모의 부모 : 버블링
+          부모 -> 자식 : 캡처링
+    -->
+    <h1>이벤트 전파 이해하기</h1>
+    <div id="outer">
+        <div id="inner">
+            <div id="child">
+                이벤트 전파 테스트
+            </div>
+        </div>
+    </div>
+    <div id="debug"></div>
+
+    <script>
+        let outer = document.querySelector("#outer");
+        let inner = document.querySelector("#inner");
+        let child = document.querySelector("#child");
+
+        //이벤트 걸기
+        //addEventListener('타입', 리스터, 전파방식) 전파방식이 true : 캡처링 false : 버블링
+        /*
+          이벤트를 중단하려면 버블링 방식으로... 
+          캡처링은 부모를 먼저 부르고 나를 부르기 때문에 전파중단이 되지 않는다.
+        */
+        outer.addEventListener('click', (e) => {
+        print("outer"); //outer
+           e.stopPropagation(); //이벤트 전파 중단
+
+        });
+        inner.addEventListener('click', (e) => {
+        print("inner"); //outer inner
+           e.stopPropagation(); //이벤트 전파 중단
+ 
+        });
+        child.addEventListener('click', (e) => {
+           print("child"); // outer inner child 다 나옴
+           e.stopPropagation(); //이벤트 전파 중단
+        });
+
+        //id가 debug인것에 log를 출력
+        /*
+        print("outer");
+        print("inner");
+        print("child");
+        */
+        let debug = document.querySelector("#debug");
+        function print(msg) {
+            debug.innerHTML += msg + "<br />";
+        }
+
+    </script>
+
+
+</body>
+</html>

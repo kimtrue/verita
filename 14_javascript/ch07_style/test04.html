@@ -1,0 +1,77 @@
+<!--
+  속성 a클래스에 b클래스 더하기
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+            border: 2px solid whitesmoke; 
+            background: burlywood;
+            color: whitesmoke;
+            margin: 30px;
+            padding: 30px;
+            height: 100px;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .b {
+          font-size: 40px;
+          font-weight: bold;  
+        }
+    </style>
+</head>
+<body>
+     <button onclick="addClass()">추가</button>
+     <button onclick="removeClass()">제거</button>
+     <!--있을 때 없애고 없을땐 생성하기-->
+     <button onclick="toggleClass()">토글toggle</button>
+     <button onclick="hasClass()">확인</button>
+
+     <!--클래스를 추가할 div-->
+     <div id="result">엘리먼트 classList 이용 </div>
+
+
+
+
+    <script>
+        //모든 함수가 사용할 
+        let divEle = document.querySelector("#result");
+        function addClass() {
+            /*
+            divEle.classList.add("a");
+            divEle.classList.add("b");
+            */
+            divEle.classList.add("a","b");
+        }
+        function removeClass() {
+            /*
+            divEle.classList.remove("a");
+            divEle.classList.remove("b");
+            */
+            divEle.classList.remove("a","b");
+        }
+        function toggleClass() {
+            //기존의 것을 반전
+            divEle.classList.toggle("a");
+            
+        }
+        function hasClass() {
+            //엘리먼트가 가진 클래스 속성 확인하기
+            //a 라는 클래스가 있으면 true
+            console.log(divEle.classList.contains("a"));
+            //b 라는 클래스가 있으면 true
+            console.log(divEle.classList.contains("b"));
+           
+        }
+
+    </script>
+</body>
+</html>

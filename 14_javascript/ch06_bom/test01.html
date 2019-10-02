@@ -1,0 +1,64 @@
+<!--
+  팝업창. 새창띄우기
+  window.open(url, target, option) 어떤 페이지를 띄울지... 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="openPop(1)">팝업창1</button>
+        <button onclick="openPop(2)">팝업창2</button>
+        <button onclick="openPop(3)">팝업창3</button>
+        <button onclick="openPop(4)">팝업창4</button>
+    </div>
+    <!-- child.html 에서 받을 아이디를 적을 곳 -->
+    <div id="result"></div>
+
+    <script>
+        function openPop(type){
+            switch(type){
+              case 1:
+                //window.open("주소", "어디에 띄울지", "옵션") 
+                window.open("http://www.naver.com", "pop1", "width=400, height=300"); 
+              
+              break;
+                
+              case 2:
+                // target이 없다면 팝업창이 계속 생성된다. target을 주면 하나의 창에만 나온다..
+              window.open("http://www.naver.com", "", "width=400, height=300"); 
+              break;
+
+              case 3:
+              console.log(screen.width, screen.height);
+              //창을 정중앙에 띄우기
+              let left = (screen.width - 400) / 2;
+              let top = (screen.height - 300) / 2;
+              window.open("http://www.naver.com", "",
+               `width=400, height=300, left=${left}, top=${top}`); 
+              break;
+              case 4:
+              //url을 주지 않았을때 - 빈페이지
+            //   window.open("", "pop1", "width=400, height=300");
+              //다른 경로의 html을 불러오자.  test01_child.html 을 여는 애를 오프너라고 한다.
+              window.open("test01_child.html", "pop1", "width=400, height=300");
+              break;
+
+            }
+           
+        }
+        //test01_child.html 에서의 msg 받기
+        function recMsg(msg){
+            document.querySelector("#result").innerHTML = "<h2>" + msg + "</h2>";
+        }
+
+    
+    </script>
+    
+</body>
+</html>

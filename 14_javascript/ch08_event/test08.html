@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        입력창
+        onfocus
+        onblur
+    -->
+    <div>
+        <input type="text" id="msg"/>
+    </div>
+    <!--결과값 멘트를 뿌리기 위한-->
+    <div id="result"></div>
+
+    <script>
+        let msg = document.querySelector("#msg");
+        let result = document.querySelector("#result");
+        
+        msg.onfocus = (e) => {
+            //focus가 왔을 때 동작
+            result.innerHTML = "<h2>포커스 이벤트 발생 </h2>"
+        }
+        msg.onblur = (e) => {
+            //focus가 왔을 때 동작
+            result.innerHTML = "<h2>포커스 빠져나감</h2>"
+        }
+
+
+
+    </script>
+
+    
+</body>
+</html>

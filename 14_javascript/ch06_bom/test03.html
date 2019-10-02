@@ -1,0 +1,43 @@
+<!--  
+    locaiton 주소와 연관된 객체
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="doAction()">클릭</button>
+    <button onclick="doRef()">새로고침</button>
+    <a href="#1" onclick="doDel(2);">삭제</button>
+    <script>
+        function doDel(no){
+            location.href = "/board/delete.do?no" + no;
+            location.href = `/board/delete.do?no + ${no}`;
+        }
+        function doRef(){
+            //자기자신 호출하기
+            // location.href=location.href;
+            //새로고침하라는 제공되는 함수
+            location.reload();
+        }
+       function doAction(){
+            console.dir(location);
+            console.dir(location.href);
+            console.dir(location.host);
+            console.dir(location.hostname);
+            console.dir(location.port);
+            console.dir(location.search);
+
+            let params = location.search;
+            console.log(params.substr(1));
+            params = params.substr(1);
+            let arr = params.split("&");
+            console.log(arr); //[id=abc, pass=123] 의 값이 나온다
+       }
+    </script>
+</body>
+</html>

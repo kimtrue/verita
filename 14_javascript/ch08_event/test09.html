@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        e.key 키를 무엇을 눌렀는지
+        e.keyCode 키의 자리
+        e.ctrlKey ctrl 눌렀는지 아닌
+
+    -->
+    <input type="text" id="in" />
+    
+    <script>
+        let msg = document.querySelector("#in");
+        //자판에 대한 이벤트 숫자만 입력 영어만 입력 등등..
+       
+        //keyup 글자가 입력이 된 다음 keydown
+        msg.onkeyup = (e) => {
+            console.log(e.key, e.keyCode, e.ctrlKey);
+        }
+        msg.onkeydown = (e) => {
+            console.log("키다운");
+        }
+
+        function fn1() {
+            
+        }
+    </script>
+</body>
+</html>

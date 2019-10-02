@@ -1,0 +1,48 @@
+<!--
+    브라우저에서 글자크기 조작하기
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+   
+    
+        <p>
+            <button onclick="sizeUp();">크게</button>
+            <button onclick="sizeDown();">작게</button>
+        </p>
+     <div>
+         <p>
+            낭만닥터김사부<br />
+            시골 병원의 명의 김사부
+         </p>
+     </div>
+
+    <script>
+            let divEle = document.querySelector("div");
+
+        function sizeUp(){
+            //기본글자크기 얻어오기
+             //숫자로 만들기 위한 + 2 숫자를 증가시킬 + "px" 픽셀단위 지정
+          divEle.style.fontSize = 
+            parseInt(document.defaultView.getComputedStyle(divEle).fontSize) + 2 + "px";
+            
+        }
+        function sizeDown(){
+            
+          divEle.style.fontSize = 
+            parseInt(document.defaultView.getComputedStyle(divEle).fontSize) - 2 + "px";
+        }
+
+    </script>
+    
+</body>
+</html>

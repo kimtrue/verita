@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            width: 200px;
+            height: 100px;
+            color: antiquewhite;
+            background: rgb(55, 55, 122);
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>고전 이벤트</h2>
+    <div>
+        <button onclick="fn1();">버튼1</button>
+        <button id="btn2">버튼2</button>
+        <button id="btn3">버튼3</button>
+        
+    </div>
+
+    <script>
+
+        let btn2 = document.getElementById("btn2");
+        // //프로퍼티방식
+        // // btn2.onclick = function(){}; 직접 함수 정의
+        // // btn2.onclick = () => {}; 직접 함수 정의
+        btn2.onclick = fn2;
+
+        let btn3 = document.querySelector("#btn3");
+        btn3.onclick = () => {
+            console.log("btn3 화살표 함수 호출");
+            console.log(this); //this - window 이벤트 객체 자체가 아닌..
+
+        }
+
+        function fn2(){
+            console.log("fn2 function call");
+            console.log(this); // this - 버튼
+
+        }
+
+
+        function fn1() {
+            console.log("코");
+            console.log(this); //this - window
+        }
+    </script>
+</body>
+</html>

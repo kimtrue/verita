@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2 {
+            transition: 2s; 
+        }
+        .a{
+            border: 2px solid black; 
+            background: #654;
+            color: whitesmoke;
+            margin: 30px;
+            padding: 30px;
+            height: 100px;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2 onclick="changeCss();">CSS 적용하기</h2>
+    <script>
+        function changeCss() {
+            let h2Ele = document.querySelector("h2");
+            //클릭했을 때 클래스를 주기
+            // h2Ele.class = "a";  클래스 속성은 class가 아닌 className 으로 줘야한다
+            // h2Ele.className="a";
+
+            //대괄호에 넣어주기
+            // h2Ele["className"]="a";
+
+            //setAttribute는 원 속성명을 사용한다
+            // h2Ele.setAttribute("className", "a"); 안돼
+            h2Ele.setAttribute("class", "a");
+        }
+
+    </script>
+</body>
+</html>
