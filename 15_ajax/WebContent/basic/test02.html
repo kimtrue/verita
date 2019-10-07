@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h2>Ajax 연습</h2>
+   <button id="btn">클릭</button>
+   <hr>
+   <div id="result"></div>
+   <script type="text/javascript">
+      let btnEle = document.querySelector("#btn");
+      let result = document.querySelector("#result");
+      btn.addEventListener("click", (e) => {
+      //1. 요청객체 얻기
+      let xhr = new XMLHttpRequest();
+      /*
+       xhr 객체에 결과에 대한 콜백함수 등록하기(4가지 단계)
+       
+      1. xhr.readyState :
+    	  총 상태값. 5단계 0 ~ 4 자동설정
+    	  readyState(0) : 처음 객체를 생성
+    	  readyState(1) : open함수 호출
+    	  readyState(2) : send함수 호출
+    	  readyState(3) : send함수가 실행될때 서버와 데이터를 주고 받는 중
+    	  readyState(4) : 서버에서 데이터가 다 왔을 때
+    	  
+	    => 상태가 4번일때 찍어줘라
+      */
+      //xhr 객체로 부터 
+      xhr.onreadystatechange = () => {
+    	/* console.log("결과값 처리...", xhr.readyState); */
+    	//결과가 다 넘어왔을 때 처리할 코드
+    	if(xhr.readyState == 4){
+    		//정상인지
+    		 if(xhr.status == 200){
+         		result.innerHTML = xhr.responseText;
+    		 }
+    		//에러인지
+    		else {
+         		result.innerHTML = `<h2>에러발생 : ${xhr.status}</h2>`;
+    		}   			 
+    			
+    	}
+    	//결과가 넘어오는 중일때.. 로딩중일때
+    	else {result.innerHTML = "<h2>처리중</h2>";}
+    	
+      };
+      
+
+      //2. 서버에 호출 정보 설정 - open("요청방식", 서버의 페이지, 비동기여부)
+      xhr.open("GET","hello.jsp",true);
+      
+      
+      //3. 서버에 데이터 호출 - send()
+      xhr.send();
+      
+      
+      });
+		
+    	  
+   
+      
+      
+      
+      
+      
+   </script>
+</body>
+</html>

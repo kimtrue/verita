@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h2>Ajax 연습</h2>
+   <button id="btn">클릭</button>
+   <hr>
+   <div id="result"></div>
+   <script type="text/javascript">
+      let btnEle = document.querySelector("#btn");
+      btn.addEventListener("click", (e) => {
+      //1. 요청객체 얻기
+      let xhr = new XMLHttpRequest();
+      
+      //2. 서버에 호출 정보 설정 - open("요청방식", 서버의 페이지, 비동기여부)
+      //요청방식 :  GET,POST,DELETE, PUT
+      //비동기여부 true 비동기 / false 동기
+      /*
+              비동기 방식 : 
+        ex)setTimeout(()=>{console.log("aaa")}, 1000);
+                안의 것이 1초뒤에 실행된다.
+               누군가 함수가 끝날때까지 기다리는게 아니라, 동시에 실행된다.
+        console.log("ajax 호출결과 : ", xhr.responseText);
+                결과가 오기전에 같이 동시에 찍으려고 했기 때문에 넘어온 값이 없어서 찍히지 않는다..
+        setTimeout을 활용해서 결과가 넘어올때까지의 시간을 줘보자..
+        
+        setTimeout에 설정한 시간보다 느릴수있다. 말도 안되는 코딩
+                 결과를 다 받고나면 불러줘야하는 코딩을 해야한다. test02에서 해결해보자
+                 콜백방식. 특정한 시점에 불러라
+         
+      */
+      xhr.open("GET","hello.jsp",true);
+      
+      
+      //3. 서버에 데이터 호출 - send()
+      xhr.send();
+      
+           console.log("ajax 호출결과(1) : ", xhr.responseText);
+      //4. ajax 호출의 실행결과 받기 
+        setTimeout(() => {
+           console.log("ajax 호출결과(2) : ", xhr.responseText);
+        }, 100);
+      });
+		
+    	  
+   
+      
+      
+      
+      
+      
+   </script>
+</body>
+</html>

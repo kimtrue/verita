@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  .red {
+    color: red;
+  }
+</style>
+</head>
+<body>
+   <h2>회원가입</h2>
+   <hr />
+   <div>
+      <label for="id">아이디</label>
+      <input id="id" type="text" size="20" />
+      <span id="result"></span>
+   </div>
+      
+      
+      
+ <script type="text/javascript">
+  let idEle = document.querySelector("#id");
+  idEle.addEventListener("blur", (e)=>{
+	  let xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange = () => {
+		  if(xhr.readyState == 4){
+			  if(xhr.status == 200){
+				  // 클래스 속성을 주고 아이디가 중복되어 빨간색이 되었다. 
+				  // 없는 아이디를 입력해도 클래스 속성이 다시 하면 지워지지 않기 때문에 사용가능한 아이디도 빨간색으로 처리된다.
+				  // 지워주고 시작해라..
+	            let result = document.querySelector("#result");
+				result.classList.remove("red");
+	            let html = "";
+	            if(xhr.responseText == 0){
+	            	html = "사용 가능한 아이디입니다";
+	            } else {
+	            	html = "중복된 아이디입니다";
+	            	result.classList.add("red");
+	            }
+	            	
+	            result.innerHTML = html;
+	          			  
+			  }
+		  }
+	  };
+	  
+	  xhr.open("GET", "test06.do?id=" + idEle.value, true);
+	  xhr.send();	  
+	  
+      /*test06.do?id=idEle.value */
+  });
+ </script>
+</body>
+</html>

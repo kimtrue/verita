@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"> 
+  table { 
+    width: 300px;
+  }
+   table, td {
+     border: 1px solid blue;
+   }
+</style>
+</head>
+<body>
+  <h2>Ajax 서블릿 통신</h2>
+  <button id="btn">클릭</button>
+  <hr>
+  <div id="result"></div>
+  
+  <script type="text/javascript">
+  let btn = document.querySelector("#btn");
+  let result = document.querySelector("#result");
+  btn.addEventListener("click",(e)=>{
+	/* 클릭이 실행되는지 확인: console.log("클릭됨");   */
+	 let xhr = new XMLHttpRequest();
+	 //콜백함수 등록
+	 xhr.onreadystatechange = () => {
+		 //결과가 다 넘어옴
+		 if(xhr.readyState == 4){
+			 if(xhr.status == 200){
+			 //test03.do의 데이터 넣어주기
+			 let names = xhr.responseText.split(",");
+			 let html = "<table>"
+			 for(let i = 0; i < names.length; i++){
+	    		 html += `<tr><td>${names[i]}</td></tr>`;
+			 }
+			 html += "</table>";
+			 result.innerHTML = html;
+				 
+			 }else {result.innerHTML = "<h2>에러!</h2>";}
+		 }
+	 };
+	 //webservlet은 프로젝트 경로 빼고.. /basic/test03.do
+	 xhr.open("GET", "test03.do",true);
+	 xhr.send();
+		
+   });
+  </script>
+
+</body>
+</html>
