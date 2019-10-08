@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bittago.repository.dao.BoardDAO">
+	
+	
+	<resultMap id="boardMap" type="Board">
+		<result column="BOARD_NO" property="boardNo" />
+		<result column="REG_DATE" property="regDate" />
+		<result column="VIEW_CNT" property="viewCnt" />
+		<result column="TITLE" property="title" />
+		<result column="CONTENT" property="content" />
+		<result column="NEXT_NO" property="nextNo" />
+		<result column="NEXT_TITLE" property="nextTitle" />
+		<result column="PRE_NO" property="preNo" />
+		<result column="PRE_TITLE" property="preTitle" />
+		
+	</resultMap>
+	
+	<resultMap id="fileMap" type="File">
+		<result column="FILE_NO" property="fileNo" />
+		<result column="BOARD_NO" property="boardNo" />
+		<result column="SYS_NAME" property="sysName" />
+		<result column="ORG_NAME" property="orgName" />
+		<result column="PATH" property="path" />
+	</resultMap>
+	
+	<!-- 게시글 1개, 이전글, 다음글 목록 조회 -->
+	<select id="selectOneBoard" parameterType="int" resultMap="boardMap">
+		SELECT A.*
+	      FROM (
+   				 SELECT
+   			     	 BOARD_NO,
+   			     	 TITLE,
+  			     	 content,
+       			 	 reg_date,
+      			 	 view_cnt,
+      			 	 LEAD(board_no, 1) OVER (ORDER BY BOARD_NO DESC) AS NEXT_NO,
+        		 	 LEAD(TITLE, 1, 'next') OVER (ORDER BY BOARD_NO DESC) AS NEXT_TITLE,
+        		 	 LAG(board_no, 1) OVER (ORDER BY BOARD_NO DESC) AS PRE_NO,
+       				 LAG(TITLE, 1, 'pre') OVER (ORDER BY BOARD_NO DESC) AS PRE_TITLE
+   				 FROM tb_board
+				) A
+	    WHERE A.BOARD_NO = #{board_no}
+	</select>
+	
+	<!-- 게시판파일 조회 -->
+	<select id="selectOneBoardFile" parameterType="int"  resultMap="fileMap">		
+		 		  select *
+		  		 		  from tb_file
+		 		 		  where	board_no = #{boardNo}	 		
+	</select>
+	<!-- 다운로드파일 조회 -->
+	<select id="selectDownloadFile" parameterType="File"  resultMap="fileMap">
+			select *
+ 			  from tb_file
+ 			  where board_no = #{boardNo} and org_name = #{orgName}	
+	</select>
+	
+	<!-- 게시물 조회 검색물 갯수 -->
+	<select id="selectBoardCount" resultType="int">
+		select count(*)
+		  from tb_board
+		  where 1=1
+		  <if test="searchType != null">
+		  				<if test="searchType == '1'.toString()">
+		  					and title like '%' || #{keyWord} || '%'
+		  					 or content like '%' || #{keyWord} || '%'
+		  				</if>
+		  				<if test="searchType == '2'.toString()">
+		  					and title like '%' || #{keyWord} || '%'
+		  				</if>
+		  				<if test="searchType == '3'.toString()">
+		  					and content like '%' || #{keyWord} || '%'
+		  				</if>
+		  		 	</if>
+	</select>
+	
+	<!-- 게시물 조회 검색 -->
+	<select id="selectSearch" parameterType="page" resultMap="boardMap">
+		select *
+		  from (select rownum rnum, a.*
+		 		  from (select *
+		  		 		  from tb_board
+		  		 		  where 1=1
+		  		 	<if test="searchType != null">
+		  				<if test="searchType == '1'.toString()">
+		  					and title like '%' || #{keyWord} || '%'
+		  					 or content like '%' || #{keyWord} || '%'
+		  				</if>
+		  				<if test="searchType == '2'.toString()">
+		  					and title like '%' || #{keyWord} || '%'
+		  				</if>
+		  				<if test="searchType == '3'.toString()">
+		  					and content like '%' || #{keyWord} || '%'
+		  				</if>
+		  		 	</if>
+		 		 		 order by board_no desc
+		 		 ) a)
+		 where rnum between #{begin} and #{end}
+		  
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateViewCnt" parameterType="int">
+		update tb_board
+   	       set view_cnt = view_cnt + 1
+		 where board_no = #{boardNo}
+	</update>
+	
+	
+	<!-- 관리자 게시글 등록 -->
+	<insert id="insertBoard" parameterType="Board">
+	<selectKey keyProperty="boardNo" resultType="int" order="BEFORE">
+		select tb_board_seq.nextval from dual
+	</selectKey>
+		insert into tb_board (board_no,  title, content) 
+		values(#{boardNo}, #{title}, #{content})
+	
+	</insert>
+	<!-- 관리자 게시물파일 등록 -->
+	<insert id="insertFile" parameterType="File">
+		insert into tb_file (file_no, board_no, sys_name, org_name, path) 
+		values(TB_FILE_SEQ.NEXTVAL, #{boardNo} , #{sysName}, #{orgName}, #{path})
+	</insert>
+	
+	<!-- 관리자 게시물 수정 -->
+	<!-- 관리자 게시물 삭제 -->
+	<!-- 관리자 검색 조회 -->
+	<select id="selectAdminBoard" resultMap="boardMap">		
+		 		  select *
+		  		 		  from tb_board
+		 		 		 order by board_no desc		 		
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>	

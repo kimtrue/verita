@@ -1,0 +1,111 @@
+
+<<<<<<< HEAD
+<<<<<<< .merge_file_a21292
+=======
+=======
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+content{
+	position: relative;
+	top:90px;
+	width: 100%;
+}
+
+<<<<<<< HEAD
+>>>>>>> .merge_file_a17792
+=======
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+.page_top {
+	margin-left: 16%;
+	padding-top: 100px;
+	padding-bottom: 30px;
+}
+
+.userinfo_check{
+	border-collapse: collapse;
+	margin: auto;
+	margin-left: 16%;
+}
+.userinfo_check > tr, td, th {
+	padding: 2%;
+	border: 1px solid #ddd;
+	border-top:  2px solid #ddd;
+	border-right: hidden;
+	border-left: hidden;
+}
+.txt_left {
+	width: 80%;
+}
+.userfirst {
+	background-color: #f9f9f9;
+}
+
+.frm_desc { 
+	margin-left: 16%;
+	padding-top: 60px; 
+	font-size:14px; 
+	color:#999; }
+
+.btn_area {
+	text-align: center;
+	padding: 3%;
+}
+.userinfo{
+	color: white;
+	background: #042f6c;
+	border: 1px solid #042f6c;
+    font-size: 20px;
+    padding: 12px 60px;
+    line-height: 23px;
+	display: inline-block;
+	cursor: pointer;
+
+}
+.userinfoc{
+	color: #042f6c;
+    background: #FFF;
+    border: 1px solid #042f6c;
+    font-size: 20px;
+    padding: 12px 60px;
+    line-height: 23px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.textinput {
+    line-height: 20px;
+    font-size: 16px;
+    line-height: 35px;
+    background: #fff;
+    border: 1px solid #bbbbbb;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.txtinputmail {
+	line-height: 20px;
+    font-size: 16px;
+    line-height: 35px;
+    background: #fff;
+    border: 1px solid #bbbbbb;
+    vertical-align: middle;
+    width: 20%;
+}
+
+.selectbirthday{
+	height: 30px;
+	width: 120px;
+	font-size: 16px;
+	margin:3px;
+}
+.userinfo_finsh {
+	margin-left: 16%;
+	border: 1px solid #ddd;
+	width: 60%;
+	padding: 3%;
+	font-size: 22px;
+}
+.userinfo_finsh > strong {
+	color: #3d7cc3;
+	font-weight: bold;
+	font-size: 22px;
+}

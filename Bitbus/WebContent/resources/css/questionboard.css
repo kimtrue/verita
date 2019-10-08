@@ -1,0 +1,239 @@
+.main {
+   padding-top: 5%;
+}
+
+.leftmenu{
+<<<<<<< HEAD
+<<<<<<< .merge_file_a02368
+  border: 1px solid black;
+  float: left;
+  margin-left: 16%; 
+  width: 200px;
+  text-align: center;
+  font-size: 20px;
+  border-left: hidden;
+  border-right: hidden;
+=======
+=======
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+   float: left;
+   margin-left: 16%; 
+   width: 200px;
+   text-align: center;
+   font-size: 20px;
+   border-left: hidden;
+   border-right: hidden;
+   border: 1px solid black;
+<<<<<<< HEAD
+>>>>>>> .merge_file_a10804
+=======
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+}
+div.slnb {
+   padding:25px 0 20px 16px; 
+   border-bottom:2px solid #4178c3;
+}
+div {
+   display: block;
+}
+.middlecontent{
+   /* border: 1px solid black; */
+   float: left;
+<<<<<<< HEAD
+<<<<<<< .merge_file_a02368
+    margin-left: 5.5%;
+    width: 55%;
+    padding-bottom: 50px;
+=======
+   margin-left: 5.5%;
+   width: 55%;
+   padding-bottom: 50px;
+>>>>>>> .merge_file_a10804
+=======
+   margin-left: 5.5%;
+   width: 55%;
+   padding-bottom: 50px;
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+}
+ul.lnb li a {
+   display:block;
+   height:30px;
+   overflow:hidden;
+   color:#666;
+   background:url('../img/lnb_bul.gif') no-repeat 30px 10px;
+}
+
+ul.lnb li a:hover {
+   color: #4178c3;
+   font-weight: bold;
+}
+
+fieldset {
+   display: block;
+   margin-inline-start: 2px;
+   margin-inline-end: 2px;
+   padding-block-start: 0.35em;
+   padding-inline-start: 0.75em;
+   padding-inline-end: 0.75em;
+   padding-block-end: 0.625em;
+   min-inline-size: min-content;
+   border-width: 2px;
+   border-style: groove;
+   border-color: threedface;
+   border-image: initial;
+   border:1px solid white;
+}
+<<<<<<< HEAD
+<<<<<<< .merge_file_a02368
+=======
+
+>>>>>>> .merge_file_a10804
+=======
+
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+legend {
+   display: block;
+   padding-inline-start: 2px;
+   padding-inline-end: 2px;
+   border-width: initial;
+   border-style: none;
+   border-color: initial;
+   border-image: initial;
+   width: 0;
+<<<<<<< HEAD
+<<<<<<< .merge_file_a02368
+    line-height: 0;
+    font-size: 0;
+    top: auto;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+=======
+=======
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+   line-height: 0;
+   font-size: 0;
+   top: auto;
+   height: 1px;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+<<<<<<< HEAD
+>>>>>>> .merge_file_a10804
+=======
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+}
+
+.terminal_search {
+   margin: 30px 0 0 0;
+   text-align: center;
+}
+
+
+img.bts {
+   vertical-align: middle;
+   margin-left: -4px;
+}
+
+input.txts {
+   padding-left: 10px;
+   height: 28px;
+   line-height: 25px;
+   color: #000;
+   font-weight: bold;
+   font-size: 12px;
+   font-family: Gulim;
+   border: 1px solid #d4d4d4;
+   border-right: 0;
+}
+
+table.board_list {
+   margin-top: 15px;
+   width: 100%;
+   border-top: 2px solid #afafaf;
+}
+<<<<<<< HEAD
+<<<<<<< .merge_file_a02368
+=======
+
+>>>>>>> .merge_file_a10804
+=======
+
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+table {
+   margin: 0;
+   padding: 0;
+   border-spacing: 0;
+   border: 0;
+   border-collapse: collapse;
+}
+table.board_list th {
+   background: #f4f4f4;
+   padding: 14px 0;
+   color: #000;
+   border-bottom: 1px solid #ccc;
+}
+table.board_list td.subject {
+   padding-left: 10px;
+   text-align: left;
+}
+td {
+   display: table-cell;
+   vertical-align: inherit;
+   
+}
+table.board_list td {
+   padding: 12px 0 12px 0;
+   text-align: center;
+   color: #000;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+table.board_list td a {
+   color: rgb(0, 0, 0);
+}
+
+#paging {
+   text-align: center;   
+}
+
+#paging > ul {
+   list-style-type:none;
+}
+
+#paging > ul li {
+   font-size: 1.1em;
+   display:inline-block;
+   cursor:pointer;
+   padding: 0 3px;
+}
+#paging > ul > li:hover {
+   /*background: #fbfbfb;*/
+   /*font-weight:bold;*/
+   color: #0080ff;
+}
+
+
+#paging > ul > li.selected {
+   color: #0080ff;
+   font-size:1.2em;
+   font-weight:bold;
+   cursor:default;
+
+}
+<<<<<<< HEAD
+<<<<<<< .merge_file_a02368
+=======
+
+>>>>>>> .merge_file_a10804
+=======
+
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+.scrollUp { display: none; position: fixed; right: 10%; bottom: 80px; padding: 10px 11px; font-size: 13px; line-height: 100%; text-align: center; color: #fff; background-color: #222; border-radius: 3px; z-index: 10000; cursor: pointer;
+	-webkit-transition: background-color 0.2s;
+	     -o-transition: background-color 0.2s;
+	        transition: background-color 0.2s;
+}
+.scrollUp:hover { background-color: #555; }

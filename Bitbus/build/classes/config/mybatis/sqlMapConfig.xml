@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 설정파일에서 사용할 프로퍼티의 파일의 경로 지정: classpath -->
+	<properties resource="config/mybatis/db.properties"/>
+
+	<!-- SQL의 결과를 담을 VO 객체들의 별칭을 설정하여 사용의 편의를 도모  -->
+	<typeAliases>
+		<typeAlias alias="User"		type="com.bittago.repository.vo.User" />
+<!-- 		<typeAlias alias="Admin"		type="com.bittago.repository.vo.Admin" /> -->
+		<typeAlias alias="Board"		type="com.bittago.repository.vo.Board" /> 
+		<typeAlias alias="Bus"		type="com.bittago.repository.vo.Bus" />
+ 		<typeAlias alias="File"		type="com.bittago.repository.vo.File" /> 
+		<typeAlias alias="Line"		type="com.bittago.repository.vo.Line" />
+<!-- 		<typeAlias alias="Nonuser"		type="com.bittago.repository.vo.Nonuser" /> -->
+		<typeAlias alias="Reservation"		type="com.bittago.repository.vo.Reservation" />
+		<typeAlias alias="Terminal"		type="com.bittago.repository.vo.Terminal" />
+		<typeAlias alias="Search"		type="com.bittago.repository.vo.Search" />
+		<typeAlias alias="Page"		type="com.bittago.repository.vo.Page" />		
+		<typeAlias alias="Schedule"		type="com.bittago.repository.vo.Schedule" />		
+		<typeAlias alias="Seat"		type="com.bittago.repository.vo.Seat" />		
+		<typeAlias alias="ScheduleList"		type="com.bittago.repository.vo.ScheduleList" />		
+
+
+
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+ 		<mapper resource="config/mapper/User.xml"/>
+		<mapper resource="config/mapper/reservation.xml"/>
+		<mapper resource="config/mapper/admin.xml"/>
+		<mapper resource="config/mapper/Board.xml"/>
+	</mappers>
+</configuration>

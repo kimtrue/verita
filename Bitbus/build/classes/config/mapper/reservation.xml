@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.bittago.repository.dao.ReservationDAO">
+	
+	<resultMap id="lineMap" type="Line">
+		<result property="lineNo" column="line_no"/>
+		<result property="busNo" column="bus_no"/>
+		<result property="departure" column="departure"/>
+		<result property="arrival" column="arrival"/>
+		<result property="departureTime" column="departure_time"></result>
+		<result property="operatingTime" column="operating_time"></result>
+		<result property="adultPrice" column="adult_price"></result>
+		<result property="kidPrice" column="kid_price"></result>
+		<result property="schDate" column="sch_date"></result>
+	</resultMap>
+	
+	<resultMap id="terminalMap" type="Terminal">
+		<result property="terminalName" column="terminal_name"/>
+		<result property="terminalNo" column="terminal_no"/>
+	</resultMap>
+	
+	<resultMap id="reservationMap" type="Reservation">
+		<result property="rsvNo" column="rsv_no"/>
+		<result property="schNo" column="sch_no"/>
+		<result property="userNo" column="user_no"/>
+		<result property="nonuserNo" column="nonuser_no"/>
+		<result property="adulsCnt" column="aduls_cnt"/>
+		<result property="kidsCnt" column="kids_cnt"/>
+		<result property="payment" column="payment"/>
+		<result property="rsvState" column="rsv_state"/>
+	</resultMap>
+	<resultMap id="seatMap" type="Seat">
+		<result property="seatNo" column="seat_no"/>
+		<result property="rsvNo" column="rsv_no"/>
+	</resultMap>
+	
+	<resultMap id="busMap" type="bus">
+		<result property="busNo" column="bus_no"/>
+		<result property="busLicense" column="bus_license"/>
+		<result property="busGrade" column="bus_grade"/>
+		<result property="maxSeatCne" column="max_seat_cnt"/>
+	</resultMap>
+	
+	
+	
+	
+	<!-- 전체 터미널 이름 출력 -->
+	<select id="terminalName" resultMap="terminalMap">
+		select *
+		from tb_terminal
+	</select>
+	
+	
+	<!-- 선택한 출발지에서 도착하는 장소들 출력 -->
+	<select id="arrivals" parameterType="int" resultMap="terminalMap">
+	select *
+	from tb_terminal
+	where terminal_no in (
+<!-- 입력한  터미널번호가 출발지로 존재하는 도착 터미널번호들 출력 -->
+                        select l.arrival
+                        from tb_terminal t
+                        inner join tb_line l
+                        on t.terminal_no = l.departure
+                        where terminal_no = #{terminalNo}
+                        )
+	</select>
+	
+	<!-- 출발지와 도착지 선택후 노선 출력 -->
+	<select id="lineSelect" parameterType="Search" resultMap="lineMap">
+		select *
+		from tb_line
+		where departure = #{departure}
+		and arrival = #{arrival}
+	</select>
+	<!-- 터미널 번호에 해당하는 이름출력 -->
+	<select id="tName" parameterType="int" resultType="string">
+		select terminal_name
+		from tb_terminal
+		where terminal_no = #{terminalNo}
+	</select>
+	
+	
+	<!-- 출발지와 도착지, 날짜선택후 노선 출력 -->
+<!-- 	<select id="DateByLine" parameterType="Date" resultType="int"> -->
+<!-- 	select line_no -->
+<!-- 	from TB_SCHEDULE -->
+<!-- 	where sch_date = #{schDate}; -->
+<!-- 	</select> -->
+	
+	<!-- 출발, 도착, 출발날짜 모두 선택시 해당하는 노선 출력 -->
+	<select id="selectAll" parameterType="Search" resultMap="lineMap">
+	select *
+	from tb_line
+	where line_no in (
+					select line_no
+					from tb_schedule
+					where sch_date = #{schDate}
+					)
+	and departure = #{departure}
+	and arrival = #{arrival}
+	</select>
+	<insert id="insertReservation" parameterType="int">
+	<selectKey keyProperty="reservationNo" resultType="int" order="BEFORE">
+		select tb_reservation_seq.nextval from dual
+	</selectKey>
+		insert into tb_reservation (
+			rsv_no, sch_no, user_no, nonuser_no, aduls_cnt, kids_cnt, payment, rsv_state
+		) values (
+			#{reservationNo}, #{schNo}, #{userNo}, #{nonuserNo}, #{adulsCnt}, #{kidsCnt}, #{payment}, #{revState}
+		)
+	</insert>
+	<insert id="insertSeat" parameterType="int">	
+		insert into tb_seat (
+			rsv_no, seat_no
+		) values (
+			#{reservationNo}, #{seatNo}
+		)
+	</insert>
+	<insert id="insertSchedule" parameterType="int">
+		insert into tb_schedule (
+			sch_no, line_no, sch_date
+		) values (
+			#{schNo}, #{lineNo}, #{schDate} 
+		)
+	</insert>
+
+</mapper>	

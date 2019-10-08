@@ -1,0 +1,111 @@
+* {
+	margin : 0;
+	padding: 0;
+	list-style:none;
+	/* color:#a0a3a2; */
+	/* font-family:times, '돋음'; */
+	/* font-size:19px; */
+	line-height:1.5;
+	box-sizing : border-box;
+	text-decoration : none;
+}
+body { 
+	/* padding-top: 120px; */
+	font-family: "Noto Sans KR", sans-serif; 
+    min-height:100%;
+    min-width: 100%;
+}
+
+content{
+    position: relative;
+<<<<<<< HEAD
+<<<<<<< .merge_file_a12956
+    width: 100%;
+    border: 1px solid #f99;
+=======
+	width: 100%;
+	top:140px;
+>>>>>>> .merge_file_a01288
+=======
+	width: 100%;
+	top:140px;
+>>>>>>> e9cdc3d36168c66e49f923e58f4ffa2f9e896122
+}
+
+content > div{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+div.location {
+	margin-top: 14px;
+	height: 24px;
+	text-align: right;
+	font-size: 14px;
+}
+
+h2.title {
+	padding: 33px 0 0 25px;
+	height: 108px;
+	background: #eeeeee;
+	text-align: left;
+	
+}
+
+table.type1 {margin-top:15px; width:100%; border-top:2px solid #afafaf;}
+table.type1 th {color:#000; padding:10px 0 10px 0; border-bottom:1px solid #ccc; background:#f4f4f4;}
+table.type1 th.left {padding:10px 4px 10px 9px; text-align:left; }
+table.type1 td {padding:10px 4px 10px 9px; color:#000; border-bottom:1px solid #ccc; line-height:13px;}
+table.type1 td.left {padding-left:15px; text-align:left;}
+table.type1 td.left2 {padding:0; text-align:left; }
+
+div.reserbox {margin-top:20px; padding:30px 32px 30px 8px; width:100%; overflow:hidden; border:2px solid #66b1f5;}
+div.reserbox div {float:left; padding-left:19px; width:501px;}
+	p.area {font-weight:bold; font-size:14px; color:#000;}
+	p.area img {vertical-align:middle;}
+div.reserbox2 {margin-top:20px; padding:20px; border:2px solid #66b1f5;}
+div.reserbox2 table.board_list {margin-top:0;}
+
+div.paybox {margin-top:20px; padding-left:290px; position:relative; width: 100%;}
+div.paybox div.sbox {position:absolute; box-sizing: border-box; left:0; top:0; width:280px; height:230px; background: #f4f4f4; font: bolder }
+	div.paybox div.sbox table {margin:8px 0 0 27px; width:220px; table-layout:fixed;}
+	div.paybox div.sbox table th {width:105px; height:65px; text-align:left;}
+	div.paybox div.sbox table td {width:115px;}
+	div.paybox div.sbox table tfoot th {margin: 0%; }
+	div.paybox div.sbox table tfoot td {font-size:20px; font-weight:bold; }
+div.paybox div.stxt {  text-align: left; height: 230px;}
+div.paybox div.stxt > th {border: 1px solid black; text-align: left; height: 230px; background: gray}
+.card_chk{margin-top: -10px; text-align: left;}
+/* .card_chk > strong {margin-bottom: -100px;} */
+#frmCardApp {margin-top:3%; width: 100%}
+#card_table {width: 80%; padding-top: 30px;}
+
+#frmCardApp > th {text-align: left;}
+.htit{text-align: right;}
+
+
+div.cashbees {padding:18px 0 30px 32px;}
+div.cashbees div.pic {padding:22px 0 0 20px;}
+div.cashbees div.pic2 {padding:22px 0 0 0; margin-left:-10px;}
+
+ul.card_chk {display: table; height:37px;}
+
+ul.card_chk > li {display: table-cell; vertical-align: middle; height: 100%; padding-left: 10px;}
+
+.stit {text-align: left; padding-top: 20px;}
+
+
+.note.etc2 {text-align: left;}
+
+#singleTicket > .type1 {text-align: left;}
+
+p.step {text-align: left; margin-top: 20px;}
+
+.sbox > table {text-align: left;}
+
+.btn_center {text-align: center;}
+
+#card_table {margin: 20px;}
+
+p.area {text-align: left;}

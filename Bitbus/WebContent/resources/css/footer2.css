@@ -1,0 +1,42 @@
+footer{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    bottom: -450px;
+    background-color: #000;
+}
+
+.footer {
+    position:relative; 
+    width:95%; 
+    margin: 0 auto;
+}
+
+div.footer span.flogo {
+    position: relative; 
+    width: 20%; 
+    left:40px; 
+    float: left; 
+    top: 60px; 
+    border-right: 1px solid #eaeaea;
+}
+
+div.footer img {
+    vertical-align:top; 
+    width: 80%;
+}
+
+.fotn {
+    position: relative;
+    float: left; 
+    top:50px; 
+    left: 100px; 
+    width: 60%;  
+    line-height: 2em; 
+    padding: 10px;
+    color: #fff;
+}
+
+.fotn div{
+    padding-top:8px;
+}

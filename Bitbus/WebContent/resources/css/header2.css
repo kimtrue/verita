@@ -1,0 +1,94 @@
+
+*, *::after, *::before {
+	box-sizing:border-box;
+}
+
+header{ 
+	position: fixed;
+	width: 100%;
+	/* border-bottom: 1px solid #fff; */
+	z-index: 99999;
+}
+
+#menu{
+	position: relative;
+	width: 70%;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+.logo{
+	width: 20%;
+	float: left;
+}
+
+.logo > img{
+	width: 130%;
+}
+
+#nav{
+	position: relative;
+	width: 80%;
+	height: 150px;
+	float: left;
+	padding: 10px;
+}
+
+.login{
+	width: 75%;
+	height: 40px;
+	margin-left: 50px;
+	border-bottom: 1px solid #fff;
+}
+
+.login > li{
+	height: 30px;
+	float: right;
+	margin-left: 20px;
+}
+
+.login > li > a{
+	color: black;
+}
+
+.login > li > a:hover{
+	color: red;
+}
+
+.gnb{ 
+	position: relative;
+	width: 100%;
+	margin-left: 50px;
+	height: 40px;
+}
+
+.gnb > li{
+	float: left;
+	margin-left: 10px;
+}
+
+.gnb > li > a{    
+	display: block;
+	width: 150px; 
+	height: 50px; 
+	font: bold 18px/3 play;
+	color: black;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.gnb > li.on > a {
+	color: #211658;
+}
+
+.gnb li:hover a {
+	color: red;
+}
+
+.gnb em {
+	display: inline-block;
+}
+
+.gnb em i {
+	margin-right:20px;
+}

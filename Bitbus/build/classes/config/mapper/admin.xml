@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.bittago.repository.dao.AdminDAO">
+	<!-- 버스 테이블  -->
+	<resultMap id="busMap" type="Bus">
+		<result property="busNo" column="bus_no" />
+		<result property="busLicense" column="bus_license" />
+		<result property="busGrade" column="bus_grade" />
+		<result property="maxSeatCnt" column="max_seat_cnt" />
+	</resultMap>
+	
+	<!-- 노선 테이블 -->
+	<resultMap id="lineMap" type="Line">
+		<result property="lineNo" column="line_no" />
+		<result property="busNo" column="bus_no" />
+		<result property="departure" column="departure" />
+		<result property="arrival" column="arrival" />
+		<result property="departureTime" column="departuer_time" />
+		<result property="operatingTime" column="operating_time" />
+		<result property="adultPrice" column="adult_price" />
+		<result property="kidPrice" column="kid_price" />
+		<result property="schDate" column="sch_date"/>
+		<result property="busLicense" column="bus_license"/>
+		<result property="maxSeatCnt" column="max_seat_cnt"/>
+	</resultMap>
+	
+	<!-- 터미널 테이블 -->
+	<resultMap id="terminalMap" type="Terminal">
+		<result property="terminalNo" column="terminal_no" />
+		<result property="terminalName" column="terminal_name" />
+	</resultMap>
+	
+	<!-- 스케줄 테이블 -->
+	<resultMap id="scheduleMap" type="Schedule">
+		<result property="schNo" column="sch_no" />
+		<result property="lineNo" column="line_no" />
+		<result property="schDate" column="sch_date" />
+	</resultMap>
+	
+	<!-- 스케줄 조회 테이블 -->
+	<resultMap id="scheduleListMap" type="ScheduleList">
+		<result property="lineNo" column="line_no" />
+		<result property="busLicense" column="bus_license" />
+		<result property="departure" column="departure" />
+		<result property="arrival" column="arrival" />
+		<result property="departureTime" column="departure_time" />
+		<result property="operatingTime" column="operating_time" />
+		<result property="adultPrice" column="adult_price" />
+		<result property="kidPrice" column="kid_price" />
+		<result property="schDate" column="sch_date" />
+		<result property="max_seat_cnt" column="maxSeatCnt" />
+	</resultMap>
+	
+	<!-- 예약 테이블 -->
+	<resultMap id="reservationMap" type="Reservation">
+		<result property="rsvNo" column="rsv_no"/>
+		<result property="schNo" column="sch_no"/>
+		<result property="userNo" column="user_no"/>
+		<result property="nonuserNo" column="nonuser_no"/>
+		<result property="adultCnt" column="adult_cnt"/>
+		<result property="kidsCnt" column="kids_cnt"/>
+		<result property="payment" column="payment"/>
+		<result property="rsvDate" column="rsv_date"/>
+	</resultMap>
+	
+	<!-- 
+	
+	<resultMap id="seatMap" type="Seat">
+		<result property="rsvNo" column="rsv_no"/>
+		<result property="seatNo" column="seat_no"/>
+	</resultMap>
+	
+	 -->
+	
+	
+	<!-- 버스 관련====================================================================== -->
+	
+	<!-- 버스 추가하기 -->
+	<insert id="insertBus" parameterType="Bus">
+		insert into tb_bus (
+		bus_no, bus_license, bus_grade, max_seat_cnt
+		) values (
+		tb_bus_seq.nextval, #{busLicense}, #{busGrade}, #{maxSeatCnt}
+		)
+	</insert>
+	
+	<!-- 버스 삭제하기 -->
+	<delete id="deleteBus" parameterType="int">
+		delete from tb_bus
+		 where bus_no = #{busNo}		
+	</delete>
+	
+	<!-- 버스 조회하기 -->
+	<select id="selectBus" parameterType="Page" resultMap="busMap">
+		select *
+		  from (select rownum rnum, a.*
+		          from (select *
+		  				  from tb_bus
+		 				 order by bus_no desc) a)
+		 where rnum between #{begin} and #{end}
+	</select>
+	
+	<!-- 버스데이터 전체 개수 구하기 -->
+	<select id="selectBusCount" resultType="int">
+		select count(*)
+		  from tb_bus
+	</select>
+	
+	<!-- 터미널목록 가져오기 -->
+	<select id="selectTerminal" resultMap="terminalMap">
+		select *
+		  from tb_terminal
+	</select>
+	
+	<!-- 스케줄 관련====================================================================== -->
+	
+	<!-- 스케줄데이터 전체 개수 구하기 -->
+	<select id="selectScheduleCount" resultType="int">
+		select count(*)
+		  from tb_schedule
+	</select>
+	
+	<!-- 스케줄 조회하기 -->
+
+	<select id="selectSchedule" resultMap="lineMap">
+		select l.line_no as line_no,
+			   b.bus_license as bus_license,
+			   d.terminal_name as departure,
+			   a.terminal_name as arrival,
+			   l.departure_time as departure_time,
+			   l.operating_time as operating_time,
+			   l.adult_price as adult_price,
+			   l.kid_price as kid_price,
+			   s.sch_date as sch_date,
+			   b.max_seat_cnt as max_seat_cnt
+		  from tb_schedule s
+	 	 inner join tb_line l
+	 	    on s.line_no = l.line_no
+	 	 inner join tb_bus b
+	 	    on l.bus_no = b.bus_no
+	 	 inner join tb_terminal d
+	 	    on l.departure = d.terminal_no
+	 	 inner join tb_terminal a
+	 	    on l.arrival = a.terminal_no
+	 	    			   <!-- 
+	 	    			<choose> 검색
+	 	    				<when test="searchType == 'busLicense'">
+	 	    					where b.bus_license like '%' || #{keyWord} || '%'
+	 	    				</when>
+	 	    				<when test="searchType == 'departure'">
+	 	    					where d.terminal_name like '%' || #{keyWord} || '%'
+	 	    				</when>
+	 	    				<when test="searchType == 'arrival'">
+	 	    					where a.terminal_name like '%' || #{keyWord} || '%'
+	 	    				</when>
+	 	    				<otherwise>
+	 	    				</otherwise>
+	 	    			</choose>
+	 	    			    -->
+	 	 order by l.line_no desc
+	</select>
+	
+	<!-- 차트 관련====================================================================== -->
+	
+	<!-- 연별 예약수 조회 -->
+	<select id="selectYearReservationCnt" resultType="int">
+		select count(*)
+		  from tb_reservation
+		 group by to_char(rsv_date, 'yy')
+	</select>
+	
+	<!-- 월별 예약수 조회 -->
+	<select id="selectMonthReservationCnt" resultType="int">
+		select count(*)
+		  from tb_reservation
+		 group by to_char(rsv_date, 'mm')
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

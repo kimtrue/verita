@@ -1,0 +1,61 @@
+table {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    border: 0;
+    border-collapse: collapse;
+}
+table.board_view {
+    margin-top: 25px;
+    width: 100%;
+    border-top: 2px solid #afafaf;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+table.board_view th {
+    padding: 13px 0 12px 0;
+    color: #333;
+    background: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+table.board_list2 {
+    margin-top: 0;
+    width: 100%;
+}
+
+table.board_list2 th.next {
+    background: #f4f4f4 url(../images/common/board_next.gif) no-repeat 22px center;
+}
+
+table.board_list2 th {
+    padding: 14px 0 11px 0;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+table.board_list2 th.prev {
+    background: #f4f4f4 url(../images/common/board_prev.gif) no-repeat 22px center;
+}
+
+table.board_list2 th {
+    padding: 14px 0 11px 0;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+div.btn_center img {
+    vertical-align: top;
+    padding: 0 2px;
+}
+
+div.btn_center {
+    margin-top: 30px;
+    text-align: center;
+}

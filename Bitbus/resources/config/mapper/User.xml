@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.bittago.repository.dao.UserDAO">
+	
+	<resultMap id="UserMap" type="User">
+		<result column="USER_NO" property="userNo" />
+		<result column="USER_EMAIL" property="userEmail" />
+		<result column="USER_NAME" property="userName" />
+		<result column="USER_PHONE" property="userPhone" />
+		<result column="USER_PASS" property="userPass" />
+	</resultMap>
+	
+	<select id="selectSignIn" parameterType="User" resultMap="UserMap">
+	
+		SELECT  *
+		FROM    (   SELECT  ADMIN_NO AS USER_NO,
+                    		ADMIN_EMAIL AS USER_EMAIL,
+                    		ADMIN_PASS AS USER_PASS 
+           			FROM    TB_ADMIN
+            		UNION
+		            SELECT  USER_NO,
+		                    USER_EMAIL,
+		                    USER_PASS
+		            FROM    TB_USER
+		        )
+		WHERE   USER_EMAIL = #{userEmail}
+		AND     USER_PASS = #{userPass}
+		
+	</select>
+	
+	<select id="selectFindUser" parameterType="User" resultType="string">
+	
+		select 	USER_EMAIL
+		from 	TB_USER
+		where	user_name = #{userName}
+		and		user_phone = #{userPhone}
+	
+	</select>
+	
+	<insert id="insertUser" parameterType="User">
+		insert into tb_file (USER_NO, USER_EMAIL, USER_NAME, USER_PHONE, USER_PASS) 
+		values(TB_USER_SEQ.NEXTVAL, #{userEmail} , #{userName}, #{userPhone}, #{userPass})
+	</insert>
+
+</mapper>	
