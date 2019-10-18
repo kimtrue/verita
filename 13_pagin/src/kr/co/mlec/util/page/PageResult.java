@@ -39,7 +39,4 @@ public class PageResult {
 	public boolean getPrev() {return prev;}
 	public boolean getNext() {return next;}
 
-	
-	 
-
 }

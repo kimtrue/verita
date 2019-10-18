@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:redirect url="/board/list2.do" />
+<c:redirect url="/board/list3.do" />
 
 
 

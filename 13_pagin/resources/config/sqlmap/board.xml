@@ -24,6 +24,7 @@
 	<select id="selectBoardCount" resultType="int">
 	   select count(*)
 	     from tb_paging_board
+	     where no between 1 and 52
 	</select>
 
 </mapper>
