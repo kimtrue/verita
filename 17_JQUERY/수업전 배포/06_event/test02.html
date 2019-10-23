@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>이벤트</title>
+	<meta charset="utf-8">
+    <style>
+		p {
+			font-size: 20px;
+			font-weight: bold;
+			height: 40px;
+			background: tomato;
+			color: white;
+			text-align: center;
+			line-height: 40px;
+		}
+
+		input[type=button] {
+			font-size: 20px;
+			font-weight: bold;
+			width: 150px;
+			height: 40px;
+		}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<button>one click</button>
+	<button>one event</button>
+	<br /><br />
+    <p>이벤트 연습</p>
+    <script>
+		/*
+		 one("event type", function)
+		*/
+
+
+
+		//한 번의 이벤트만을 위해
+		$("button:eq(0)").click((e) => {
+			alert("클릭됨");
+			// this 는 window 
+			$(e.target).off();
+		});
+		//한 번의 이벤트만을 위해
+		$("button:eq(1)").one("click", () => {alert("두 번째 버튼 클릭됨")});
+
+     </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <style>
+        * { margin:0px; padding:0px; }
+        .container  {
+            overflow:hidden;
+            position:relative;           
+            left: 50%;
+            transform: translateX(-50%);
+            width:600px; height:400px;
+        }
+        .area { width:3000px; position:relative; }
+        .img { float:left; width:600px; height:400px; }
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);            
+            width: 40px;
+            height: 60px; 
+			margin: 5px;
+			font-size: 20px;
+        }
+        .left__btn { left: 0; }
+        .right__btn { right: 0; }   
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>이미지 슬라이더</h1>
+    <div class="container">
+        <div class="area">
+            <img src="./images/Desert.jpg" class="img"/>
+            <img src="./images/Hydrangeas.jpg" class="img"/>
+            <img src="./images/Jellyfish.jpg" class="img"/>
+            <img src="./images/jeno.jpg" class="img"/>
+            <img src="./images/Lighthouse.jpg" class="img"/>
+        </div>
+        <button class="button left__btn"><<</button>
+        <button class="button right__btn">>></button>
+    </div>
+    <script>
+        //사진 순서를 위한 인덱스
+        let index = 0;
+
+        //사진을 이동시키기위한 함수
+        function moveSlide(){
+            //이동할 좌표
+            let move = -(index * 600);
+            $(".area").animate({left: move}, 1000);
+        }
+
+        //슬라이드 가운데로 하기
+        //이전버튼
+        $("button:eq(0)").click(() => {
+            // 이전버튼 누르면
+            if(index === 0) index = 4;
+            else index--;
+            moveSlide();
+        });
+        //다음버튼
+        $("button:eq(1)").click(() => {
+        //다음버튼 누르면
+            if(index === 4) index = 0;
+            else index++;
+            moveSlide();
+
+        });
+
+        //https://swiperjs.com/demos/ 참고
+
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

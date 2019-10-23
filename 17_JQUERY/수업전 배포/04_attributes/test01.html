@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css selectors</title>
+<style type="text/css">
+	p {
+		margin: 0px auto;
+		width: 80%;
+		height: 100px;
+		font-size: 5em;
+	}
+	button {
+		margin-right: 30px;
+		height: 50px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<img src="images/pic1.jpg" width="50px" height="50px" />
+	<div>
+		<button id="btn1">attr 설정</button>
+		<button id="btn2">attr 삭제</button>
+		<button id="btn3">attr 추출</button>
+	</div>
+	<script>
+		//첫번째 버튼 누를때
+		$("button:first").click(() => {
+			//속성 바꾸기
+			$("img").attr({
+				width: "250px", height: "150px", title: "이제노", src: "images/jeno.jpg"
+			});
+		});
+		//삭제
+		$("button:eq(1)").click(() => {
+			$("img").removeAttr("src");
+		});
+		//추출
+		$("button:eq(2)").click(() => {
+	 		console.log($("img").attr("src"));
+			// $("img").attr("src", "images/pic1.jpg");
+			/*
+			$("img").attr("src", function(){
+				return "image/pic1.jpg";
+			});
+			*/
+			//추출하면서 이미지 바꾸기
+			$("img").attr("src", ()=>"images/pic1.jpg");
+
+
+		});
+
+
+
+	/*
+		attr( "속성명" ) : 속성값 얻기
+		attr( "속성명", "값" ) : 하나를 설정
+		attr( Object ) : 여러개를 한번에 설정하려 할때
+		removeAttr( "속성명" ) : 속성 삭제
+	*/
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

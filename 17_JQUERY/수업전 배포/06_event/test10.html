@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>이벤트</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="imglist">
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+	</div>
+    <script>
+
+		//무한 스크롤 이벤트
+		$(window).scroll(() => {
+		/*
+		 -보이는 창의 w * h window
+			$(window).height() 현재 보이는 창
+		 -스크롤의 top의 위치 window
+		 -안보이는 영역의 위치 document
+		*/
+
+			console.log($(window).scrollTop())
+			console.log($(window).height())
+			console.log($(document).height())
+
+			let sh = $(window).scrollTop() + $(window).height();
+			let dh = $(document).height();
+
+			if(sh >= dh - 10) {
+			//ajax로 데이터 갖고오기
+				for(let i = 0; i < 5; i++){
+					$("#imglist").append($("#imglist > div:first-child").clone());				
+				}
+			}
+
+		})
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

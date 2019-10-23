@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery.js"></script>
+<script>
+
+	/*
+	window.onload = function (){
+		$("#msg").html("변경");
+	};
+	*/
+	
+	//id가 msg인 것이 없어서 못찾는다
+	// $("#msg").html("변경");
+	
+	//선택자, 엘리먼트를 주지 않고 윈도우 로딩 후 실행할 함수를 직접
+	$(() => {
+		$("#msg").html("변경");
+	});
+	
+		
+
+</script>
+</head>
+<body>
+	<h1 id="msg">로딩후 실행</h1>
+</body>
+</html>
+
+
+
+
+

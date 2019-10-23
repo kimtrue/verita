@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 
+	선택자에 태그  기능 추가하기
+	$(HTMLElement)
+ --> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery.js"></script>
+</head>
+<body>
+	<button id="btn1">버튼 1</button>
+	<button id="btn2">버튼 2</button>
+	<script>
+		//$(엘리먼트) 지원해준다
+		// $("button").click(() => {
+		// 	console.dir(this);   this - window
+		// });
+		$("button").click(function() {
+			//console.dir(this); this -> 누른 버튼 element
+			//클릭한 엘리먼트 자체에 주고싶다
+			$(this).html("버튼 텍스트 변경");
+			
+		});
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+

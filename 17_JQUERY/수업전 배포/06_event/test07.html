@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>이벤트</title>
+	<meta charset="utf-8">
+	<style>
+	button {
+		margin: 5px;
+		font-size: 20px;
+		height: 50px;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<button>추가</button>
+    <div id="content">
+        <input type="checkbox" name="ck" value="1" />
+    </div>
+    <script> 
+			//현재 시점에 있지 않아도 나중에 생성되는 것에 이벤트 걸어주기
+
+        //내가 이벤트를 걸려고하는 부모객체
+        $("#content").on("click", "input:checkbox", (e) => {
+			alert($(e.target).val());
+		})
+		$("button").click(() => {
+			//현재 인풋 체크 박스인것을 찾아 길이에 + 1
+			let len = $("input:checkbox").length + 1;
+			$("#content").append(
+			`<input type="checkbox" name="ck" value="${len}" />`
+			); 
+		});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

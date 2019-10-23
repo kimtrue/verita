@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>이벤트</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <p>지금 내 생각을</p>
+        <h1><span id="countSpan">0</span>/50</h1>
+        <textarea cols="70"rows="5"></textarea>
+    </div>
+    <script>
+        //key up 이벤트
+        $("textarea").keyup((e) => {
+            //keyup 이벤트가 발생할 대상객체의 길이
+            let len = $(e.target).val().length;
+            //#countspan의 0을 ++ 해줘야함
+            $("#countSpan").text(len);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
