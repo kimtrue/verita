@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+  ** Ajax 에서 파일업로드를 할 때,
+  -- form 플로그인 사용하기  
+  -- FormData 객체 이용 - 순수 javascript
+  
+-->
+<!-- 라이브러리 충돌... -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+ 	<form id="fileForm" >
+ 	 	<input type="text" id="msg" name="msg" /> <br>
+ 	 	<input type="file" id="attach" name="attach" multiple="multiple" /><br>
+ 	 	<button type="button">업로드</button>
+	 </form>
+ 	<div id="result"></div>
+
+	<script>
+	//$ajax 로 form 처리하기
+	$("button").click(() => {
+		/*
+		console.dir($("#attach")[0].files);
+		console.dir($("#attach")[0].files[0]);
+		console.dir($("#attach")[0].files[0].name);
+		console.dir($("#attach")[0].files[0].size);
+		console.dir($("#attach")[0].files[0].type);
+		*/
+		
+		//ajax를 통해서 폼의 데이터 처리하기
+		let fd = new FormData();
+		//추가하기
+		//msg 란 key값으로 val 가 들어간다
+		fd.append("msg", $("#msg").val());
+		
+		let files = $("#attach")[0].files;
+		for(let i = 0; i < files.length; i++){
+			fd.append("attach"+i, files[i]);
+// 			console.log("name: ", files[i].name)
+		}
+		
+		//ajax로 form 을 전송하기 위해 사용해야할 2가지
+		/*
+		contentType: false,
+		processData: false,
+		 
+		*/
+		$.ajax({
+			url: "/18_jquery_ajax/file/test01.do",
+			type: "POST",
+			data: fd, //form 데이터 객체를 그냥 설정
+			contentType: false,
+			processData: false,
+			success: (result) => {
+				$("#result").html(result);
+			}
+			
+		});
+	});
+	
+	</script>
+</body>
+</html>

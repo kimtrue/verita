@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- 라이브러리 충돌... -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<input type="text" id="msg"/>
+		<button>호출</button>
+	</div>
+	<div id="result"></div>
+	<script>
+	$("button").click(() => {
+		
+		$.ajax({
+			url: "/18_jquery_ajax/basic/test01.do",
+			type: "GET",
+			beforeSend: () => {
+				if($("#msg").val() === "") {
+				alert("입력된 정보가 없습니다");
+				return false;
+				}
+			},
+// 			data: "msg=" + $("#msg").val(),
+			data: {msg: $("#msg").val()},
+// 			success: (result) => $("#result").html(result)
+		})
+		.done((result) => $("#result").html(result));
+	});
+		
+	</script>
+</body>
+</html>

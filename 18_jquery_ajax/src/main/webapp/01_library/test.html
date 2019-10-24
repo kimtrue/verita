@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery.js"></script>
+</head>
+<body>
+	<h1>Ajax 테스트</h1>
+	<button>클릭</button>
+	<input type="hidden" id="msg" value="같은 시간 같은 자리"></input>
+	<hr>
+	<div id="result"></div>
+	
+	
+	<script type="text/javascript">
+	  $("button").click(() => {
+		  $.ajax({
+			  //메서드
+// 			  type: "POST",
+			  //호출할 페이지
+			  url: "hello.jsp",
+			  //파라미터 처리
+// 			  data: "msg=success",
+			  data: {msg: $("#msg").val()},
+			  //Json으로 넘기고 싶을 때
+			  /*dataType: "Json",*/
+			  //결과 데이터 처리
+			  //성공했을 시 자동 콜백함수 호출, ajax 실행결과를 result에 준다
+			  success: function (result){
+					  $("#result").html(result);
+			  }
+		  });
+		  /*
+		  let xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange = function () {
+			if(xhr.readyState === 4){
+				if(xhr.status === 200){
+					  JSON.parse(xhr.responseText)
+					  $("#result").html(xhr.responseText);
+				}
+			}
+		};
+		xhr.open("GET", "hello.jsp?msg=success", true);
+		xhr.send();
+		
+		xhr.open("POST", "hello.jsp", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+		xhr.send("msg=success");
+		*/
+		
+	  });
+	</script>	
+</body>
+</html>
+
+
+
+
+
