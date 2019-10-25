@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- 라이브러리 충돌... 
+  josnp 활용하기
+   => 무조건 서버가 이름을 어떤 이름으로 만들어 놨는지 스크립트에서 다른 이름으로 기능을 만들어 놨는데
+    이름을 바꿔야 한다. 또 다른 API도 같은 이름으로 기능을 만들어 놨다면 .. 문제가 생긴다
+    
+   -jquery를 활용
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<input type="text" id="msg"/>
+		<button>호출</button>
+	</div>
+	<div id="result"></div>
+	<script>
+		function call (msg) {
+			$("#result").html(msg);
+		}
+		$("button").click(()=>{
+			/*
+			$.getScript("http://localhost:9080/18_jquery_apiserver/cors/test04.do?callback=call")
+			*/
+			/*
+			$.getJSON(
+					"http://localhost:9080/18_jquery_apiserver/cors/test04.do?callback=?",
+							//? 자리에 함수를 만든것을 내부적으로 준다
+					(msg) => {
+						alert("호출성공");
+						$("#result").html(msg)
+						}
+					);
+			*/
+			$.ajax({
+				url: "http://localhost:9080/18_jquery_apiserver/cors/test04.do",
+				dataType: "jsonp",
+				jsonp: "callback", //jsonp에서 사용할 파라미터 이름. callback=jQuery34106344702649788574_1571971325546 식으로 올 것이다
+// 				jsonpCallback: "myCall" callback=myCall 내가 함수를 지정해서 넘겨주고 싶을 때
+				success: (msg) => {$("#result").html(msg)}
+				
+			});
+		});
+			
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 라이브러리 충돌... 
+  josnp 활용하기
+   -script 태그를 이용해서 자바스크립트 파일을 용청하는 
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<input type="text" id="msg"/>
+		<button>호출</button>
+	</div>
+	<div id="result"></div>
+	<script>
+		function cb (msg) {
+			$("#result").html(msg);
+		}
+		$("button").click(()=>{
+			$(document.body).append(
+						<!-- 자바의 서블릿 주소 -->
+						$(`<script src="http://localhost:9080/18_jquery_apiserver/cors/test03.do">&lt;/script>`)
+					);
+		});
+			
+	</script>
+</body>
+</html>
