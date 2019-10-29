@@ -6,22 +6,21 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.co.mlec.common.db.MyAppSqlConfig;
-import kr.co.mlec.repository.dao.BoardDAO;
+import kr.co.mlec.board.service.BoardService;
 
 public class ListBoardController implements Controller {
 	
-	private BoardDAO dao;
+	private BoardService service;
 	
 	public ListBoardController() {
-		this.dao = MyAppSqlConfig.getSqlSessionInstance().getMapper(BoardDAO.class);
+		this.service = new BoardService();
 	}
 
 	public ModelAndView service(HttpServletRequest req, HttpServletResponse res) 
 			throws Exception {
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/board/list.jsp");
-		mav.addObject("list", dao.selectBoard());
+		mav.addObject("list", service.list());
 		
 		// 데이터를 구하고 공유
 //		req.setAttribute("list", dao.selectBoard());

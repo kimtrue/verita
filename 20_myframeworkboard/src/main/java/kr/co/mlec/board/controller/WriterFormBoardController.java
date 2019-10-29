@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class WriterFormBoardController implements Controller {
 	public ModelAndView service(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		return new ModelAndView("/jsp/board/writeform.jsp");
+		
 	
 	}
 }

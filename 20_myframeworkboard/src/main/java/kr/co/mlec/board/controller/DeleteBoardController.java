@@ -7,21 +7,22 @@ import org.springframework.web.servlet.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.WebConstants;
 
-import kr.co.mlec.common.db.MyAppSqlConfig;
-import kr.co.mlec.repository.dao.BoardDAO;
+import kr.co.mlec.board.service.BoardService;
 
 public class DeleteBoardController implements Controller {
 	
-	private BoardDAO dao;
+	private BoardService service;
 	
 	public DeleteBoardController() {
-		dao = MyAppSqlConfig.getSqlSessionInstance().getMapper(BoardDAO.class);
+//		dao = MyAppSqlConfig.getSqlSessionInstance().getMapper(BoardDAO.class);
+		this.service = new BoardService();
 	}
 	
 	
 	public ModelAndView service(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		// 데이터베이스 처리하기
-		dao.deleteBoard(Integer.parseInt(req.getParameter("no"))); 
+//		dao.deleteBoard(Integer.parseInt(req.getParameter("no"))); 
+		service.deleteBoard(Integer.parseInt(req.getParameter("no")));
 		return new ModelAndView(WebConstants.REDIRECT + "list.do");
 	}
 }

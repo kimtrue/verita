@@ -27,6 +27,7 @@ public class UpdateFormBoardController implements Controller {
 		rd.forward(req, res);
 		*/
 		
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/board/updateform.jsp");
 		mav.addObject("board", dao.selectOneBoard(Integer.parseInt(req.getParameter("no"))));
